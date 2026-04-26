@@ -1,21 +1,20 @@
 import yfinance as yf
-from google import genai
+import google.generativeai as genai
 import json
 import os
 import datetime
 import time
 import re
 
-# Setup Gemini API
+# Setup Gemini API using the stable SDK
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     print("Error: GEMINI_API_KEY environment variable not set.")
     exit(1)
 
-client = genai.Client(api_key=GEMINI_API_KEY)
-MODEL_ID = "gemini-1.5-flash" 
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel('gemini-1.5-flash')
 
-# Shariah Sector Map for Fallback
 SECTOR_MAP = {
     "5347.KL": "Utilities", "6033.KL": "Utilities", "5183.KL": "Energy", 
     "5398.KL": "Construction", "5012.KL": "Utilities", "0215.KL": "Utilities",
@@ -32,67 +31,37 @@ SECTOR_MAP = {
 }
 
 def get_top_movers():
-    print("Scanning Bursa Malaysia for active stocks...")
-    # Cleaned list (removed delisted/404 symbols)
+    print("Scanning Bursa Malaysia...")
     base_tickers = list(SECTOR_MAP.keys())
-    
     active_data = []
     for ticker_symbol in base_tickers:
         try:
             t = yf.Ticker(ticker_symbol)
-            # Use a longer period to ensure we always get at least two trading days
             hist = t.history(period="10d")
-            if hist.empty or len(hist) < 2: 
-                continue
+            if hist.empty or len(hist) < 2: continue
             
             price = hist['Close'].iloc[-1]
             prev_price = hist['Close'].iloc[-2]
             change = ((price - prev_price) / prev_price) * 100
             volume = hist['Volume'].iloc[-1]
             avg_vol = hist['Volume'].mean()
-            vol_spike = volume / avg_vol if avg_vol > 0 else 1.0
             
-            # Fetch news
-            news_items = []
-            try:
-                if t.news:
-                    for n in t.news[:3]:
-                        news_items.append(n['title'])
-            except:
-                pass
-
-            # We accept everything that has a price to avoid "0 movers"
-            # The AI will then sort the wheat from the chaff
             active_data.append({
                 "ticker": ticker_symbol,
-                "name": ticker_symbol.replace(".KL", ""), # Fallback name
+                "name": ticker_symbol.replace(".KL", ""),
                 "sector": SECTOR_MAP.get(ticker_symbol, "Other"),
                 "price": round(price, 3),
                 "change_pct": round(change, 2),
-                "vol_spike": round(vol_spike, 2),
-                "news": news_items
+                "vol_spike": round(volume / avg_vol, 2)
             })
-            time.sleep(0.2) # Small delay for reliability
-        except Exception as e:
-            print(f"Skipping {ticker_symbol}: {e}")
-            continue
-            
-    # Sort by momentum (price change * volume spike)
-    active_data = sorted(active_data, key=lambda x: (abs(x['change_pct']) + x['vol_spike']), reverse=True)
-    return active_data[:20] # Send top 20 to AI
+            time.sleep(0.1)
+        except: continue
+    return sorted(active_data, key=lambda x: (abs(x['change_pct']) + x['vol_spike']), reverse=True)[:20]
 
 def analyze_market(market_data):
-    if not market_data:
-        return None
-
     prompt = f"""
     You are a Senior Bursa Malaysia Analyst. 
-    Analyze these stocks for a Shariah-compliant watchlist. 
-    
-    RULES:
-    1. EXCLUDE non-Shariah stocks.
-    2. YOU MUST suggest the TOP 5-8 most interesting stocks from the list provided.
-    3. Categorize each into a sector: Technology, Utilities, Energy, Construction, Healthcare, Consumer, or Other.
+    Analyze these stocks and suggest the TOP 5-8 most interesting SHARIAH-COMPLIANT setups.
     
     Data:
     {json.dumps(market_data, indent=2)}
@@ -105,7 +74,7 @@ def analyze_market(market_data):
         {{
           "ticker": "Ticker",
           "name": "Full Name",
-          "sector": "Sector Name",
+          "sector": "Sector",
           "price": 0.00,
           "analysis": "2-sentence institutional analysis",
           "confidence": 1-10,
@@ -114,28 +83,24 @@ def analyze_market(market_data):
       ]
     }}
     """
-    
     try:
-        response = client.models.generate_content(model=MODEL_ID, contents=prompt)
+        response = model.generate_content(prompt)
         match = re.search(r'\{.*\}', response.text, re.DOTALL)
         return json.loads(match.group()) if match else None
     except Exception as e:
-        print(f"Gemini Error: {e}")
+        print(f"AI Error: {e}")
         return None
 
 def main():
-    market_data = get_top_movers()
-    print(f"Captured {len(market_data)} assets. Generating intelligence report...")
-    
-    report = analyze_market(market_data)
-    
+    data = get_top_movers()
+    print(f"Analyzing {len(data)} movers...")
+    report = analyze_market(data)
     if report:
         os.makedirs('data', exist_ok=True)
-        with open('data/daily_report.json', 'w') as f:
+        report_path = os.path.join('data', 'daily_report.json')
+        with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
-        print("Intelligence report published successfully.")
-    else:
-        print("Failed to generate report.")
+        print("Success.")
 
 if __name__ == "__main__":
     main()
