@@ -1,60 +1,114 @@
 {
   "date": "2026-04-26",
-  "market_overview": "Market volatility is currently normalizing. Focus is shifting toward high-liquidity laggards and sector-specific catalysts in Technology and Energy.",
+  "market_overview": "Broad market scanning active. Current rotation is being detected in mid-cap Shariah counters across Infrastructure and Consumer sectors.",
   "top_picks": [
     {
       "ticker": "0097.KL",
-      "name": "0097",
+      "name": "VITROX",
       "sector": "Technology",
       "price": 5.52,
-      "analysis": "Currently consolidating in the Technology sector. Price of RM 5.52 shows a 10.84% shift. Volume at 4.51x average indicates healthy liquidity.",
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS"
-    },
-    {
-      "ticker": "5148.KL",
-      "name": "5148",
-      "sector": "Construction",
-      "price": 0.55,
-      "analysis": "Currently consolidating in the Construction sector. Price of RM 0.55 shows a 5.77% shift. Volume at 2.88x average indicates healthy liquidity.",
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS"
+      "confidence": 9,
+      "strategy": "HIGH MOMENTUM BUY",
+      "analysis": "Detected significant momentum in VITROX (Technology). Price shifted 10.84% on 4.51x normal volume. Technical structure remains favorable."
     },
     {
       "ticker": "8877.KL",
-      "name": "8877",
+      "name": "EKOVEST",
       "sector": "Construction",
       "price": 0.235,
-      "analysis": "Currently consolidating in the Construction sector. Price of RM 0.235 shows a 6.82% shift. Volume at 1.33x average indicates healthy liquidity.",
       "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS"
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "Detected significant momentum in EKOVEST (Construction). Price shifted 6.82% on 1.33x normal volume. Technical structure remains favorable."
+    },
+    {
+      "ticker": "5148.KL",
+      "name": "UEMS",
+      "sector": "Property",
+      "price": 0.55,
+      "confidence": 9,
+      "strategy": "HIGH MOMENTUM BUY",
+      "analysis": "Detected significant momentum in UEMS (Property). Price shifted 5.77% on 2.88x normal volume. Technical structure remains favorable."
+    },
+    {
+      "ticker": "1651.KL",
+      "name": "MRCB",
+      "sector": "Construction",
+      "price": 0.32,
+      "confidence": 8,
+      "strategy": "BUY ON BREAKOUT",
+      "analysis": "Detected significant momentum in MRCB (Construction). Price shifted 4.92% on 2.38x normal volume. Technical structure remains favorable."
+    },
+    {
+      "ticker": "3867.KL",
+      "name": "MPI",
+      "sector": "Technology",
+      "price": 37.84,
+      "confidence": 9,
+      "strategy": "HIGH MOMENTUM BUY",
+      "analysis": "Detected significant momentum in MPI (Technology). Price shifted 4.13% on 3.16x normal volume. Technical structure remains favorable."
+    },
+    {
+      "ticker": "0151.KL",
+      "name": "CTOS",
+      "sector": "Technology",
+      "price": 6.25,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "Detected significant momentum in CTOS (Technology). Price shifted 4.52% on 1.62x normal volume. Technical structure remains favorable."
+    },
+    {
+      "ticker": "5340.KL",
+      "name": "GADANG",
+      "sector": "Construction",
+      "price": 6.53,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "Detected significant momentum in GADANG (Construction). Price shifted 5.15% on 0.33x normal volume. Technical structure remains favorable."
     },
     {
       "ticker": "5398.KL",
-      "name": "5398",
+      "name": "GAMUDA",
       "sector": "Construction",
       "price": 4.3,
-      "analysis": "Currently consolidating in the Construction sector. Price of RM 4.3 shows a -3.59% shift. Volume at 1.37x average indicates healthy liquidity.",
       "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS"
-    },
-    {
-      "ticker": "0215.KL",
-      "name": "0215",
-      "sector": "Utilities",
-      "price": 2.85,
-      "analysis": "Currently consolidating in the Utilities sector. Price of RM 2.85 shows a 2.89% shift. Volume at 1.74x average indicates healthy liquidity.",
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS"
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "Detected significant momentum in GAMUDA (Construction). Price shifted -3.59% on 1.37x normal volume. Technical structure remains favorable."
     },
     {
       "ticker": "5226.KL",
-      "name": "5226",
+      "name": "GBGAQRS",
       "sector": "Construction",
       "price": 0.16,
-      "analysis": "Currently consolidating in the Construction sector. Price of RM 0.16 shows a 3.23% shift. Volume at 1.23x average indicates healthy liquidity.",
       "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS"
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "Detected significant momentum in GBGAQRS (Construction). Price shifted 3.23% on 1.23x normal volume. Technical structure remains favorable."
+    },
+    {
+      "ticker": "5168.KL",
+      "name": "HARTA",
+      "sector": "Healthcare",
+      "price": 1.14,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "Detected significant momentum in HARTA (Healthcare). Price shifted -3.39% on 0.82x normal volume. Technical structure remains favorable."
+    },
+    {
+      "ticker": "0215.KL",
+      "name": "SLVEST",
+      "sector": "Utilities",
+      "price": 2.85,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "Detected significant momentum in SLVEST (Utilities). Price shifted 2.89% on 1.74x normal volume. Technical structure remains favorable."
+    },
+    {
+      "ticker": "1503.KL",
+      "name": "OSK",
+      "sector": "Property",
+      "price": 1.07,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "Detected significant momentum in OSK (Property). Price shifted 0.0% on 7.02x normal volume. Technical structure remains favorable."
     }
   ]
 }
