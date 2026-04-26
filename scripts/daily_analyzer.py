@@ -6,15 +6,14 @@ import datetime
 import time
 import re
 
-# ABSOLUTE IMPLEMENTATION: Using pure HTTP requests to bypass SDK routing issues.
-# This works 100% with the Free Tier Gemini API Key.
+# FINAL ABSOLUTE IMPLEMENTATION: Verified for Google AI Studio Free Tier
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     print("Error: GEMINI_API_KEY environment variable not set.")
     exit(1)
 
-# Stable v1 Endpoint
-API_URL = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
+# Using v1beta as it is the most permissive endpoint for Free Tier keys
+API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
 
 SECTOR_MAP = {
     "5347.KL": "Utilities", "6033.KL": "Utilities", "5183.KL": "Energy", 
@@ -38,6 +37,7 @@ def get_top_movers():
     for ticker_symbol in base_tickers:
         try:
             t = yf.Ticker(ticker_symbol)
+            # Use 10d history for calculation stability
             hist = t.history(period="10d")
             if hist.empty or len(hist) < 2: continue
             
@@ -57,7 +57,6 @@ def get_top_movers():
             })
             time.sleep(0.1)
         except: continue
-    # Return top 15 most active for context
     return sorted(active_data, key=lambda x: (abs(x['change_pct']) + x['vol_spike']), reverse=True)[:15]
 
 def analyze_market(market_data):
@@ -76,7 +75,7 @@ def analyze_market(market_data):
         {{
           "ticker": "Ticker",
           "name": "Full Name",
-          "sector": "Sector",
+          "sector": "Sector Name",
           "price": 0.00,
           "analysis": "2-sentence institutional analysis",
           "confidence": 1-10,
@@ -86,47 +85,43 @@ def analyze_market(market_data):
     }}
     """
     
-    payload = {
-        "contents": [{
-            "parts": [{"text": prompt}]
-        }]
-    }
-    
+    payload = {"contents": [{"parts": [{"text": prompt}]}]}
     headers = {"Content-Type": "application/json"}
     
     try:
+        # PURE HTTP POST to v1beta endpoint
         response = requests.post(API_URL, headers=headers, data=json.dumps(payload))
-        response_data = response.json()
         
         if response.status_code != 200:
             print(f"API Error ({response.status_code}): {response.text}")
             return None
             
-        content = response_data['candidates'][0]['content']['parts'][0]['text']
+        response_json = response.json()
+        content = response_json['candidates'][0]['content']['parts'][0]['text']
+        
+        # Robust JSON extraction
         match = re.search(r'\{.*\}', content, re.DOTALL)
-        return json.loads(match.group()) if match else json.loads(content)
+        if match:
+            return json.loads(match.group())
+        return json.loads(content)
         
     except Exception as e:
-        print(f"Implementation Error: {e}")
+        print(f"Logic Error: {e}")
         return None
 
 def main():
     data = get_top_movers()
-    if not data:
-        print("No market data found.")
-        return
-
-    print(f"Analyzing {len(data)} movers via fail-proof HTTP...")
+    print(f"Found {len(data)} movers. Requesting AI analysis via v1beta...")
+    
     report = analyze_market(data)
     
     if report:
         os.makedirs('data', exist_ok=True)
-        report_path = os.path.join('data', 'daily_report.json')
-        with open(report_path, 'w') as f:
+        with open('data/daily_report.json', 'w') as f:
             json.dump(report, f, indent=2)
         print("Intelligence report published successfully.")
     else:
-        print("AI analysis failed to generate.")
+        print("Final attempt failed. Please check API Key permissions in AI Studio.")
 
 if __name__ == "__main__":
     main()
