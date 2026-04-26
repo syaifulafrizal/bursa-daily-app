@@ -1,0 +1,19 @@
+{
+  "shariah_watchlist": [
+    {"ticker": "5347.KL", "name": "TNB"},
+    {"ticker": "5243.KL", "name": "Velesto"},
+    {"ticker": "5309.KL", "name": "ITMAX"},
+    {"ticker": "5398.KL", "name": "Gamuda"},
+    {"ticker": "5225.KL", "name": "IHH"},
+    {"ticker": "0215.KL", "name": "Solarvest"},
+    {"ticker": "8877.KL", "name": "Ekovest"},
+    {"ticker": "0219.KL", "name": "Reservoir Link"},
+    {"ticker": "5226.KL", "name": "Gabungan AQRS"},
+    {"ticker": "0235.KL", "name": "SNS Network"},
+    {"ticker": "5168.KL", "name": "Hartalega"},
+    {"ticker": "7153.KL", "name": "Kossan"},
+    {"ticker": "5285.KL", "name": "SIMEPLT"},
+    {"ticker": "6033.KL", "name": "PETGAS"},
+    {"ticker": "5183.KL", "name": "PCHEM"}
+  ]
+}
