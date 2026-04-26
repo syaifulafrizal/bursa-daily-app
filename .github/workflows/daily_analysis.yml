@@ -21,7 +21,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install yfinance google-genai
+          pip install yfinance requests
 
       - name: Run Analysis
         env:

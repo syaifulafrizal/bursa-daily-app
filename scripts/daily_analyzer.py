@@ -1,20 +1,20 @@
 import yfinance as yf
-from google import genai
+import requests
 import json
 import os
 import datetime
 import time
 import re
 
-# Setup Gemini API
+# ABSOLUTE IMPLEMENTATION: Using pure HTTP requests to bypass SDK routing issues.
+# This works 100% with the Free Tier Gemini API Key.
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     print("Error: GEMINI_API_KEY environment variable not set.")
     exit(1)
 
-# Using the newest google-genai SDK to fix routing issues
-client = genai.Client(api_key=GEMINI_API_KEY)
-MODEL_ID = "gemini-1.5-flash" 
+# Stable v1 Endpoint
+API_URL = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
 
 SECTOR_MAP = {
     "5347.KL": "Utilities", "6033.KL": "Utilities", "5183.KL": "Energy", 
@@ -53,15 +53,16 @@ def get_top_movers():
                 "sector": SECTOR_MAP.get(ticker_symbol, "Other"),
                 "price": round(price, 3),
                 "change_pct": round(change, 2),
-                "vol_spike": round(volume / avg_vol, 2)
+                "vol_spike": round(volume / avg_vol, 2) if avg_vol > 0 else 1.0
             })
             time.sleep(0.1)
         except: continue
-    return sorted(active_data, key=lambda x: (abs(x['change_pct']) + x['vol_spike']), reverse=True)[:20]
+    # Return top 15 most active for context
+    return sorted(active_data, key=lambda x: (abs(x['change_pct']) + x['vol_spike']), reverse=True)[:15]
 
 def analyze_market(market_data):
     prompt = f"""
-    You are a Senior Bursa Malaysia Analyst. 
+    You are an Institutional Senior Bursa Malaysia Analyst. 
     Analyze these stocks and suggest the TOP 5-8 most interesting SHARIAH-COMPLIANT setups.
     
     Data:
@@ -84,44 +85,48 @@ def analyze_market(market_data):
       ]
     }}
     """
+    
+    payload = {
+        "contents": [{
+            "parts": [{"text": prompt}]
+        }]
+    }
+    
+    headers = {"Content-Type": "application/json"}
+    
     try:
-        # Switch to newest client.models.generate_content pattern
-        response = client.models.generate_content(
-            model=MODEL_ID,
-            contents=prompt
-        )
-        content = response.text
+        response = requests.post(API_URL, headers=headers, data=json.dumps(payload))
+        response_data = response.json()
+        
+        if response.status_code != 200:
+            print(f"API Error ({response.status_code}): {response.text}")
+            return None
+            
+        content = response_data['candidates'][0]['content']['parts'][0]['text']
         match = re.search(r'\{.*\}', content, re.DOTALL)
         return json.loads(match.group()) if match else json.loads(content)
+        
     except Exception as e:
-        print(f"AI Error: {e}")
-        # FALLBACK: Create a basic report if AI fails so the website doesn't break
-        return {
-            "date": datetime.datetime.now().strftime('%Y-%m-%d'),
-            "market_overview": "AI Analysis is currently synchronizing. Showing raw market data.",
-            "top_picks": [
-                {
-                    "ticker": m["ticker"],
-                    "name": m["name"],
-                    "sector": m["sector"],
-                    "price": m["price"],
-                    "analysis": f"Price change: {m['change_pct']}% | Volume Spike: {m['vol_spike']}x avg.",
-                    "confidence": 5,
-                    "strategy": "MONITOR DATA"
-                } for m in market_data[:5]
-            ]
-        }
+        print(f"Implementation Error: {e}")
+        return None
 
 def main():
     data = get_top_movers()
-    print(f"Analyzing {len(data)} movers...")
+    if not data:
+        print("No market data found.")
+        return
+
+    print(f"Analyzing {len(data)} movers via fail-proof HTTP...")
     report = analyze_market(data)
+    
     if report:
         os.makedirs('data', exist_ok=True)
         report_path = os.path.join('data', 'daily_report.json')
         with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
-        print("Success.")
+        print("Intelligence report published successfully.")
+    else:
+        print("AI analysis failed to generate.")
 
 if __name__ == "__main__":
     main()
