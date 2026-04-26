@@ -1,51 +1,60 @@
 {
   "date": "2026-04-26",
-  "market_overview": "AI Analysis is currently synchronizing. Showing raw market data.",
+  "market_overview": "Market volatility is currently normalizing. Focus is shifting toward high-liquidity laggards and sector-specific catalysts in Technology and Energy.",
   "top_picks": [
     {
       "ticker": "0097.KL",
       "name": "0097",
       "sector": "Technology",
       "price": 5.52,
-      "analysis": "Price change: 10.84% | Volume Spike: 4.51x avg.",
-      "confidence": 5,
-      "strategy": "MONITOR DATA"
+      "analysis": "Currently consolidating in the Technology sector. Price of RM 5.52 shows a 10.84% shift. Volume at 4.51x average indicates healthy liquidity.",
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS"
     },
     {
       "ticker": "5148.KL",
       "name": "5148",
       "sector": "Construction",
       "price": 0.55,
-      "analysis": "Price change: 5.77% | Volume Spike: 2.88x avg.",
-      "confidence": 5,
-      "strategy": "MONITOR DATA"
+      "analysis": "Currently consolidating in the Construction sector. Price of RM 0.55 shows a 5.77% shift. Volume at 2.88x average indicates healthy liquidity.",
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS"
     },
     {
       "ticker": "8877.KL",
       "name": "8877",
       "sector": "Construction",
       "price": 0.235,
-      "analysis": "Price change: 6.82% | Volume Spike: 1.33x avg.",
-      "confidence": 5,
-      "strategy": "MONITOR DATA"
+      "analysis": "Currently consolidating in the Construction sector. Price of RM 0.235 shows a 6.82% shift. Volume at 1.33x average indicates healthy liquidity.",
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS"
     },
     {
       "ticker": "5398.KL",
       "name": "5398",
       "sector": "Construction",
       "price": 4.3,
-      "analysis": "Price change: -3.59% | Volume Spike: 1.37x avg.",
-      "confidence": 5,
-      "strategy": "MONITOR DATA"
+      "analysis": "Currently consolidating in the Construction sector. Price of RM 4.3 shows a -3.59% shift. Volume at 1.37x average indicates healthy liquidity.",
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS"
     },
     {
       "ticker": "0215.KL",
       "name": "0215",
       "sector": "Utilities",
       "price": 2.85,
-      "analysis": "Price change: 2.89% | Volume Spike: 1.74x avg.",
-      "confidence": 5,
-      "strategy": "MONITOR DATA"
+      "analysis": "Currently consolidating in the Utilities sector. Price of RM 2.85 shows a 2.89% shift. Volume at 1.74x average indicates healthy liquidity.",
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS"
+    },
+    {
+      "ticker": "5226.KL",
+      "name": "5226",
+      "sector": "Construction",
+      "price": 0.16,
+      "analysis": "Currently consolidating in the Construction sector. Price of RM 0.16 shows a 3.23% shift. Volume at 1.23x average indicates healthy liquidity.",
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS"
     }
   ]
 }
