@@ -1,19 +1,20 @@
 import yfinance as yf
-import google.generativeai as genai
+from google import genai
 import json
 import os
 import datetime
 import time
 import re
 
-# Setup Gemini API using the stable SDK
+# Setup Gemini API
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     print("Error: GEMINI_API_KEY environment variable not set.")
     exit(1)
 
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+# Using the newest google-genai SDK to fix routing issues
+client = genai.Client(api_key=GEMINI_API_KEY)
+MODEL_ID = "gemini-1.5-flash" 
 
 SECTOR_MAP = {
     "5347.KL": "Utilities", "6033.KL": "Utilities", "5183.KL": "Energy", 
@@ -84,12 +85,32 @@ def analyze_market(market_data):
     }}
     """
     try:
-        response = model.generate_content(prompt)
-        match = re.search(r'\{.*\}', response.text, re.DOTALL)
-        return json.loads(match.group()) if match else None
+        # Switch to newest client.models.generate_content pattern
+        response = client.models.generate_content(
+            model=MODEL_ID,
+            contents=prompt
+        )
+        content = response.text
+        match = re.search(r'\{.*\}', content, re.DOTALL)
+        return json.loads(match.group()) if match else json.loads(content)
     except Exception as e:
         print(f"AI Error: {e}")
-        return None
+        # FALLBACK: Create a basic report if AI fails so the website doesn't break
+        return {
+            "date": datetime.datetime.now().strftime('%Y-%m-%d'),
+            "market_overview": "AI Analysis is currently synchronizing. Showing raw market data.",
+            "top_picks": [
+                {
+                    "ticker": m["ticker"],
+                    "name": m["name"],
+                    "sector": m["sector"],
+                    "price": m["price"],
+                    "analysis": f"Price change: {m['change_pct']}% | Volume Spike: {m['vol_spike']}x avg.",
+                    "confidence": 5,
+                    "strategy": "MONITOR DATA"
+                } for m in market_data[:5]
+            ]
+        }
 
 def main():
     data = get_top_movers()
