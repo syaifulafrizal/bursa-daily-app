@@ -1,47 +1,47 @@
-# Bursa Daily Analyst App
+# 🏛️ Asset Architect: Shariah Market Intelligence
 
-Automated Shariah-compliant market intelligence for Bursa Malaysia.
+Automated, high-fidelity market intelligence for Shariah-compliant equities on Bursa Malaysia. Powered by AI and real-time flow analysis.
 
-## Features
-- **Daily Automated Updates:** Runs every trading day at 8:00 AM MYT via GitHub Actions.
-- **AI-Powered Analysis:** Combines technical data (Price, Volume) with latest news headlines using Gemini 1.5 Flash.
-- **Shariah-Focused:** Monitors a curated list of Shariah-compliant stocks.
-- **Free Hosting:** Hosted on GitHub Pages.
+## 🚀 Vision
+**Asset Architect** is designed to bridge the gap between institutional-grade data and retail Shariah investors. By synthesizing price action, volume anomalies, and news catalysts, the platform identifies high-conviction setups every morning before the market open.
 
-## Deployment Instructions
+## 🛠️ Core Technology
+- **Intelligence Engine:** Version 4.0 (Multi-model AI with expert logic fallback).
+- **Automation:** GitHub Actions cloud orchestration.
+- **Data Source:** YFinance Real-time market feed.
+- **Frontend:** Responsive dashboard using Tailwind CSS and Plus Jakarta Sans.
 
-### 1. Get a Gemini API Key
-1. Go to [Google AI Studio](https://aistudio.google.com/).
-2. Create a free API Key.
+## 📡 Deployment Guide
 
-### 2. Setup your GitHub Repository
-1. Create a **new repository** on GitHub (make it Public to have free GitHub Actions).
-2. Push this folder to your repository:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-   git push -u origin main
-   ```
+### 1. Intelligence Key
+Generate a free API key from [Google AI Studio](https://aistudio.google.com/). This powers the qualitative analysis layer.
 
-### 3. Configure GitHub Secrets
-1. In your GitHub repository, go to **Settings > Secrets and variables > Actions**.
-2. Click **New repository secret**.
+### 2. Infrastructure Setup
+Push the codebase to a **Public** GitHub repository to leverage unlimited Action minutes:
+```bash
+git init
+git add .
+git commit -m "Architect: Initializing V4.0 Infrastructure"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/asset-architect.git
+git push -u origin main
+```
+
+### 3. Security Configuration
+In your GitHub Repo:
+1. Navigate to **Settings > Secrets and variables > Actions**.
+2. Create a **New repository secret**.
 3. Name: `GEMINI_API_KEY`
-4. Value: Paste your Gemini API key from Step 1.
+4. Value: (Your key from Step 1).
 
-### 4. Enable GitHub Pages
-1. Go to **Settings > Pages**.
-2. Under "Build and deployment", select **Deploy from a branch**.
-3. Choose the `main` branch and the `/ (root)` folder.
+### 4. Live Dashboard Activation
+1. Navigate to **Settings > Pages**.
+2. Deployment Source: `Deploy from a branch`.
+3. Branch: `main` | Folder: `/ (root)`.
 4. Click **Save**.
 
-### 5. Manual First Run (Optional)
-1. Go to the **Actions** tab in your GitHub repository.
-2. Select **Daily Bursa Analysis** workflow.
-3. Click **Run workflow** to generate your first report immediately.
+### 5. Manual Execution
+To see results immediately, go to the **Actions** tab, select `Daily Bursa Analysis`, and click `Run workflow`.
 
-## Disclaimer
-This application provides AI-generated analysis for educational purposes. Always consult with a certified financial advisor before making investment decisions.
+## ⚖️ Disclaimer
+Asset Architect is an automated research tool. All information is provided for educational purposes and does not constitute financial advice. Trading involves significant risk of loss. Always consult a licensed professional before investing.
