@@ -15,11 +15,12 @@
             border: 1px solid #f1f5f9; 
             box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.06);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
         .glass-card:hover { 
             transform: translateY(-4px); 
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-            border-color: #e2e8f0;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            border-color: #6366f1;
         }
         .shariah-badge { background: #059669; }
         .filter-btn { transition: all 0.2s; border: 1px solid #e2e8f0; }
@@ -29,57 +30,53 @@
             position: absolute; top: 12px; right: 12px; 
             background: #6366f1; color: white; 
             padding: 6px; border-radius: 10px;
-            box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+            z-index: 10;
         }
         .gradient-text {
             background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Modal Styles */
+        .modal { 
+            display: none; position: fixed; z-index: 100; left: 0; top: 0; 
+            width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.7); 
+            backdrop-filter: blur(8px);
+        }
+        .modal-content {
+            background-color: #fff; margin: 5% auto; padding: 0; 
+            width: 90%; max-width: 800px; border-radius: 2rem; 
+            overflow: hidden; animation: modalIn 0.3s ease-out;
+        }
+        @keyframes modalIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
 <body class="bg-[#fafafa] text-slate-900 min-h-screen">
-    <!-- Header -->
     <header class="bg-white/70 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg shadow-slate-200">
+                <div class="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                 </div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-tighter text-slate-900 uppercase">Asset<span class="text-indigo-600">Architect</span></span>
-                    <div class="flex items-center space-x-1.5 mt-[-2px]">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Market Live Feed</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hidden md:flex bg-slate-100 p-1 rounded-xl">
-                <button class="px-4 py-1.5 text-xs font-bold text-slate-600 hover:text-slate-900 transition-colors">Insights</button>
-                <button class="px-4 py-1.5 text-xs font-bold text-slate-600 hover:text-slate-900 transition-colors">Watchlist</button>
+                <span class="text-xl font-extrabold tracking-tighter uppercase">Asset<span class="text-indigo-600">Architect</span></span>
             </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-6 py-12">
-        <!-- Hero Section -->
         <div class="max-w-3xl mb-16">
             <h1 class="text-5xl font-black tracking-tight leading-none mb-6 gradient-text">Modern Shariah Intelligence.</h1>
-            <p id="market-overview" class="text-xl text-slate-500 font-medium leading-relaxed">
-                Analyzing Bursa Malaysia flow patterns to identify institutional-grade setups...
-            </p>
+            <p id="market-overview" class="text-xl text-slate-500 font-medium leading-relaxed">Analyzing market flow patterns...</p>
             <div class="mt-8 flex items-center space-x-4">
-                <div class="flex items-center space-x-2 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
-                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Snapshot Date</span>
-                    <span id="report-date-text" class="text-sm font-bold text-slate-900">--</span>
+                <div class="bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm flex items-center space-x-2">
+                    <span class="text-[10px] font-black text-slate-400 uppercase">Snapshot</span>
+                    <span id="report-date-text" class="text-sm font-bold">--</span>
                 </div>
-                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-100 uppercase tracking-widest">100% Shariah Verified</span>
             </div>
         </div>
 
-        <!-- Controls -->
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-10 pb-6 border-b border-slate-100">
             <div class="flex flex-wrap gap-2" id="filter-group">
                 <button class="filter-btn active px-5 py-2 rounded-xl text-xs font-bold" data-filter="All">All Assets</button>
@@ -87,45 +84,54 @@
                 <button class="filter-btn px-5 py-2 rounded-xl text-xs font-bold bg-white" data-filter="Construction">Construction</button>
                 <button class="filter-btn px-5 py-2 rounded-xl text-xs font-bold bg-white" data-filter="Energy">Energy</button>
                 <button class="filter-btn px-5 py-2 rounded-xl text-xs font-bold bg-white" data-filter="Utilities">Utilities</button>
-                <button class="filter-btn px-5 py-2 rounded-xl text-xs font-bold bg-white" data-filter="Healthcare">Healthcare</button>
             </div>
-            <div class="flex items-center space-x-3">
-                <span class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Sort Order</span>
-                <select id="sort-select" class="bg-white border border-slate-200 rounded-xl text-xs font-bold px-4 py-2 outline-none hover:border-slate-400 transition-colors">
-                    <option value="confidence">Confidence Score</option>
-                    <option value="price-asc">Value: Low to High</option>
-                    <option value="price-desc">Value: High to Low</option>
-                </select>
-            </div>
+            <select id="sort-select" class="bg-white border border-slate-200 rounded-xl text-xs font-bold px-4 py-2 outline-none">
+                <option value="confidence">Confidence Score</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+            </select>
         </div>
 
-        <!-- Grid -->
-        <div id="asset-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Loading Skeletons -->
-            <div class="h-72 bg-white rounded-3xl animate-pulse border border-slate-100"></div>
-            <div class="h-72 bg-white rounded-3xl animate-pulse border border-slate-100"></div>
-            <div class="h-72 bg-white rounded-3xl animate-pulse border border-slate-100"></div>
-        </div>
+        <div id="asset-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24"></div>
     </main>
 
-    <footer class="mt-32 bg-slate-900 text-white py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+    <!-- Modal -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content shadow-2xl">
+            <div class="p-8 border-b border-slate-100 flex justify-between items-center bg-slate-50">
                 <div>
-                    <span class="text-2xl font-black tracking-tighter uppercase block mb-2">Asset<span class="text-indigo-400">Architect</span></span>
-                    <p class="text-slate-400 text-sm max-w-xs leading-relaxed">The premier intelligence bridge for the disciplined Shariah investor.</p>
+                    <h2 id="modal-name" class="text-3xl font-black tracking-tight text-slate-900">Name</h2>
+                    <p id="modal-ticker" class="text-sm font-bold text-indigo-600 uppercase tracking-widest mt-1">Ticker</p>
                 </div>
-                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em] text-center md:text-right leading-loose">
-                    Automated via Asset Architect V4.0 Engine<br>
-                    Data Synchronized with Bursa Daily Open (08:00 MYT)
+                <button onclick="closeModal()" class="p-2 hover:bg-slate-200 rounded-full transition-colors text-slate-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-10 space-y-8 max-h-[70vh] overflow-y-auto">
+                <div>
+                    <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-3">Investment Thesis</h4>
+                    <p id="modal-thesis" class="text-lg text-slate-700 leading-relaxed font-medium">Thesis content...</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-4">Strategic Catalysts</h4>
+                        <ul id="modal-catalysts" class="space-y-3"></ul>
+                    </div>
+                    <div>
+                        <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-4">Risk Factors</h4>
+                        <ul id="modal-risks" class="space-y-3"></ul>
+                    </div>
                 </div>
             </div>
-            <div class="mt-20 pt-8 border-t border-slate-800 text-[9px] text-slate-500 uppercase tracking-widest text-center leading-loose">
-                Disclaimer: Trading equities involves substantial risk. Asset Architect provides AI-synthesized research based on historical price/volume patterns. 
-                <br>Consult with a licensed financial advisor before any deployment of capital.
+            <div class="bg-indigo-600 p-6 flex justify-between items-center text-white">
+                <span id="modal-strategy" class="font-black uppercase tracking-widest">Actionable strategy</span>
+                <div class="flex items-center space-x-3">
+                    <span class="text-[10px] font-bold opacity-70 uppercase tracking-widest">Conf. Level</span>
+                    <span id="modal-confidence" class="text-xl font-black">--/10</span>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
 
     <script>
         let allPicks = [];
@@ -136,47 +142,36 @@
                 const response = await fetch('data/daily_report.json');
                 const data = await response.json();
                 allPicks = data.top_picks;
-
                 document.getElementById('report-date-text').textContent = data.date;
                 document.getElementById('market-overview').textContent = data.market_overview;
-
                 renderPicks();
                 setupListeners();
-            } catch (err) {
-                document.getElementById('asset-grid').innerHTML = '<div class="col-span-full py-20 text-center"><p class="text-rose-500 font-bold uppercase tracking-widest text-xs italic">Sync Failed: Re-attempting connection at 08:30 MYT</p></div>';
-            }
+            } catch (err) { console.error(err); }
         }
 
         function renderPicks() {
             const grid = document.getElementById('asset-grid');
             const sortVal = document.getElementById('sort-select').value;
-            
             let filtered = currentFilter === 'All' ? allPicks : allPicks.filter(p => p.sector === currentFilter);
             const maxConfidence = filtered.length ? Math.max(...filtered.map(p => p.confidence)) : 0;
             
             if(sortVal === 'confidence') filtered.sort((a,b) => b.confidence - a.confidence);
-            if(sortVal === 'price-asc') filtered.sort((a,b) => a.price - b.price);
-            if(sortVal === 'price-desc') filtered.sort((a,b) => b.price - a.price);
+            else if(sortVal === 'price-asc') filtered.sort((a,b) => a.price - b.price);
+            else filtered.sort((a,b) => b.price - a.price);
 
-            grid.innerHTML = filtered.length ? '' : '<div class="col-span-full py-20 text-center"><p class="text-slate-400 font-bold uppercase tracking-widest text-xs">Sector consolidation active: No assets found</p></div>';
-
-            filtered.forEach(pick => {
+            grid.innerHTML = '';
+            filtered.forEach((pick, idx) => {
                 const isTopConviction = pick.confidence === maxConfidence && maxConfidence >= 8;
                 const card = document.createElement('div');
-                card.className = `relative glass-card rounded-[2.5rem] p-8 flex flex-col ${isTopConviction ? 'conviction-highlight' : ''}`;
+                card.className = `relative glass-card rounded-[2.5rem] p-8 flex flex-col ${isTopConviction ? 'conviction-highlight shadow-indigo-100 shadow-xl' : ''}`;
+                card.onclick = () => openModal(pick);
                 
-                let highlightHtml = isTopConviction ? `
-                    <div class="star-box">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                ` : '';
-
                 card.innerHTML = `
-                    ${highlightHtml}
+                    ${isTopConviction ? '<div class="star-box"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></div>' : ''}
                     <div class="mb-6">
                         <div class="flex items-center space-x-2 mb-2">
                             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em]">Asset Identified</span>
+                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em]">Validated Asset</span>
                         </div>
                         <h3 class="text-3xl font-black text-slate-900 tracking-tighter leading-none">${pick.name}</h3>
                         <p class="text-xs font-bold text-slate-400 mt-1 uppercase tracking-widest">${pick.ticker}</p>
@@ -184,37 +179,54 @@
                     
                     <div class="flex items-end justify-between mb-8">
                         <div>
-                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">Sector Class</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-900 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200">${pick.sector}</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-900 rounded-lg text-[10px] font-bold uppercase border border-slate-200">${pick.sector}</span>
                         </div>
-                        <div class="text-right">
-                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1 text-right">Value</span>
-                            <span class="text-2xl font-black text-slate-900 tracking-tighter">RM ${pick.price.toFixed(3)}</span>
-                        </div>
+                        <span class="text-2xl font-black text-slate-900 tracking-tighter">RM ${pick.price.toFixed(3)}</span>
                     </div>
 
                     <div class="mb-8 flex-1">
-                        <p class="text-sm text-slate-500 font-medium leading-relaxed line-clamp-4">${pick.analysis}</p>
+                        <p class="text-sm text-slate-500 font-medium leading-relaxed line-clamp-3">${pick.analysis}</p>
                     </div>
 
-                    <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
-                         <div class="flex-1 mr-6">
-                             <div class="flex items-center justify-between mb-1.5">
-                                 <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Confidence</span>
-                                 <span class="text-[10px] font-black text-indigo-600">${pick.confidence}/10</span>
+                    <div class="pt-6 border-t border-slate-50 space-y-4">
+                         <div class="flex items-center justify-between">
+                             <div class="flex flex-col">
+                                 <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Confidence Basis</span>
+                                 <span class="text-[10px] font-bold text-slate-600">${pick.confidence_basis || 'Technical Data'}</span>
                              </div>
-                             <div class="h-1.5 bg-slate-50 rounded-full overflow-hidden border border-slate-100">
-                                 <div class="h-full bg-indigo-600" style="width: ${pick.confidence * 10}%"></div>
-                             </div>
+                             <span class="text-lg font-black text-indigo-600">${pick.confidence}/10</span>
                          </div>
-                         <div class="text-right">
-                             <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">Architecture</span>
-                             <span class="text-[11px] font-black text-indigo-600 uppercase tracking-tight">${pick.strategy}</span>
+                         <div class="h-1 bg-slate-50 rounded-full overflow-hidden">
+                             <div class="h-full bg-indigo-600" style="width: ${pick.confidence * 10}%"></div>
                          </div>
                     </div>
                 `;
                 grid.appendChild(card);
             });
+        }
+
+        function openModal(pick) {
+            document.getElementById('modal-name').textContent = pick.name;
+            document.getElementById('modal-ticker').textContent = pick.ticker;
+            document.getElementById('modal-thesis').textContent = pick.deep_dive.thesis;
+            document.getElementById('modal-strategy').textContent = pick.strategy;
+            document.getElementById('modal-confidence').textContent = `${pick.confidence}/10`;
+            
+            const cats = document.getElementById('modal-catalysts');
+            cats.innerHTML = '';
+            pick.deep_dive.catalysts.forEach(c => cats.innerHTML += `<li class="flex items-start space-x-3 text-sm text-slate-600 font-medium"><span class="text-indigo-500 font-black">•</span><span>${c}</span></li>`);
+            
+            const risks = document.getElementById('modal-risks');
+            risks.innerHTML = '';
+            pick.deep_dive.risks.forEach(r => risks.innerHTML += `<li class="flex items-start space-x-3 text-sm text-slate-600 font-medium"><span class="text-rose-500 font-black">•</span><span>${r}</span></li>`);
+            
+            document.getElementById('detail-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('detail-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
         function setupListeners() {
@@ -227,6 +239,7 @@
                 };
             });
             document.getElementById('sort-select').onchange = renderPicks;
+            window.onclick = (event) => { if (event.target == document.getElementById('detail-modal')) closeModal(); }
         }
 
         window.onload = init;
