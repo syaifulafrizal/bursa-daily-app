@@ -1,6 +1,6 @@
 {
   "date": "2026-04-27",
-  "market_overview": "Market Universe scan active. High volume rebalancing detected in key laggard sectors.",
+  "market_overview": "Market Universe scan active. Technical metrics indicate a consolidation phase with selective institutional flow into value-oriented Shariah counters.",
   "top_picks": [
     {
       "ticker": "0132.KL",
@@ -9,17 +9,17 @@
       "price": 0.035,
       "confidence": 7,
       "strategy": "ACCUMULATE",
-      "confidence_basis": "Breakout momentum",
-      "analysis": "CYPARK is exhibiting technical strength in the Utilities sector. Price shifted 16.67% on 0.47x relative volume.",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "CYPARK is exhibiting technical interest in the Utilities sector. Price shifted 16.67% on 0.47x relative volume.",
       "deep_dive": {
-        "thesis": "Technical setup in CYPARK is driven by a volume anomaly in the Utilities sector.",
+        "thesis": "Logic analysis for CYPARK suggests institutional rebalancing based on 10-day volume flow.",
         "catalysts": [
           "0.47x Average Daily Volume",
-          "Support zone established"
+          "Technical Support established"
         ],
         "risks": [
-          "Broader market volatility",
-          "Sector rotation risk"
+          "Liquidity constraints",
+          "Broader sector volatility"
         ]
       }
     },
@@ -30,17 +30,17 @@
       "price": 0.24,
       "confidence": 7,
       "strategy": "ACCUMULATE",
-      "confidence_basis": "Breakout momentum",
-      "analysis": "PHARMA is exhibiting technical strength in the Healthcare sector. Price shifted -2.04% on 0.34x relative volume.",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "PHARMA is exhibiting technical interest in the Healthcare sector. Price shifted -2.04% on 0.42x relative volume.",
       "deep_dive": {
-        "thesis": "Technical setup in PHARMA is driven by a volume anomaly in the Healthcare sector.",
+        "thesis": "Logic analysis for PHARMA suggests institutional rebalancing based on 10-day volume flow.",
         "catalysts": [
-          "0.34x Average Daily Volume",
-          "Support zone established"
+          "0.42x Average Daily Volume",
+          "Technical Support established"
         ],
         "risks": [
-          "Broader market volatility",
-          "Sector rotation risk"
+          "Liquidity constraints",
+          "Broader sector volatility"
         ]
       }
     },
@@ -51,17 +51,17 @@
       "price": 1.83,
       "confidence": 6,
       "strategy": "WATCHLIST",
-      "confidence_basis": "Volume activity",
-      "analysis": "TGC is exhibiting technical strength in the Consumer sector. Price shifted 0.55% on 0.64x relative volume.",
+      "confidence_basis": "Trend Neutral",
+      "analysis": "TGC is exhibiting technical interest in the Consumer sector. Price shifted 0.55% on 0.9x relative volume.",
       "deep_dive": {
-        "thesis": "Technical setup in TGC is driven by a volume anomaly in the Consumer sector.",
+        "thesis": "Logic analysis for TGC suggests institutional rebalancing based on 10-day volume flow.",
         "catalysts": [
-          "0.64x Average Daily Volume",
-          "Support zone established"
+          "0.9x Average Daily Volume",
+          "Technical Support established"
         ],
         "risks": [
-          "Broader market volatility",
-          "Sector rotation risk"
+          "Liquidity constraints",
+          "Broader sector volatility"
         ]
       }
     },
@@ -72,19 +72,20 @@
       "price": 1.0,
       "confidence": 6,
       "strategy": "WATCHLIST",
-      "confidence_basis": "Volume activity",
-      "analysis": "CHINHIN is exhibiting technical strength in the Industrial sector. Price shifted 0.5% on 0.21x relative volume.",
+      "confidence_basis": "Trend Neutral",
+      "analysis": "CHINHIN is exhibiting technical interest in the Industrial sector. Price shifted 0.5% on 0.23x relative volume.",
       "deep_dive": {
-        "thesis": "Technical setup in CHINHIN is driven by a volume anomaly in the Industrial sector.",
+        "thesis": "Logic analysis for CHINHIN suggests institutional rebalancing based on 10-day volume flow.",
         "catalysts": [
-          "0.21x Average Daily Volume",
-          "Support zone established"
+          "0.23x Average Daily Volume",
+          "Technical Support established"
         ],
         "risks": [
-          "Broader market volatility",
-          "Sector rotation risk"
+          "Liquidity constraints",
+          "Broader sector volatility"
         ]
       }
     }
-  ]
+  ],
+  "source": "Logic Engine"
 }
