@@ -3,159 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asset Architect | Shariah Intelligence Matrix</title>
+    <title>Bursa Blueprint | Shariah Market Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: #f8fafc; }
-        .matrix-card { 
-            background: #1e293b; 
-            border: 1px solid #334155; 
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .blueprint-card { 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
         }
-        .matrix-card:hover { 
-            background: #334155; 
+        .blueprint-card:hover { 
             border-color: #6366f1;
-            transform: scale(1.02);
-            z-index: 10;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
         }
         .mono { font-family: 'JetBrains Mono', monospace; }
-        .filter-btn { border: 1px solid #334155; transition: all 0.2s; }
-        .filter-btn.active { background: #6366f1; color: white; border-color: #6366f1; }
-        .conviction-edge { border-left: 4px solid #6366f1 !important; }
+        .filter-btn { border: 1px solid #e2e8f0; transition: all 0.2s; background: white; }
+        .filter-btn.active { background: #0f172a; color: white; border-color: #0f172a; }
+        .conviction-indicator { border-top: 3px solid #6366f1 !important; }
         .modal { 
             display: none; position: fixed; z-index: 100; left: 0; top: 0; 
-            width: 100%; height: 100%; background-color: rgba(2, 6, 23, 0.9); 
-            backdrop-filter: blur(4px);
+            width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.6); 
+            backdrop-filter: blur(10px);
         }
         .modal-content {
-            background-color: #1e293b; margin: 2% auto; 
-            width: 95%; max-width: 1000px; border-radius: 1.5rem; 
-            border: 1px solid #475569; overflow: hidden;
+            background-color: #fff; margin: 3% auto; 
+            width: 95%; max-width: 900px; border-radius: 2rem; 
+            overflow: hidden; animation: modalIn 0.3s ease-out;
         }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 10px; }
-        .analytic-tag { @apply px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-tight; }
+        @keyframes modalIn { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .analytic-tag { @apply px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-tight border; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
     <!-- Compact Top Nav -->
-    <nav class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50 h-14">
+    <nav class="border-b border-slate-100 bg-white/70 backdrop-blur-xl sticky top-0 z-50 h-16">
         <div class="max-w-[1600px] mx-auto px-6 h-full flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-7 h-7 bg-indigo-600 rounded flex items-center justify-center">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+            <div class="flex items-center space-x-4">
+                <div class="w-9 h-9 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg shadow-slate-200">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
                 </div>
-                <span class="text-sm font-black uppercase tracking-[0.2em]">Asset<span class="text-indigo-500">Architect</span></span>
-                <span class="h-4 w-px bg-slate-700 hidden sm:block"></span>
-                <span id="market-status" class="hidden sm:flex items-center space-x-2 text-[10px] font-bold text-emerald-500 uppercase tracking-widest">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>Matrix Feed Active</span>
-                </span>
+                <div>
+                    <span class="text-lg font-extrabold tracking-tighter uppercase text-slate-900 leading-none block">Bursa<span class="text-indigo-600">Blueprint</span></span>
+                    <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Shariah Intel Node 6.5</span>
+                </div>
             </div>
             <div class="flex items-center space-x-6">
-                <button onclick="toggleLogs()" class="text-[10px] font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-widest">Sys_Logs</button>
-                <div class="bg-slate-800 px-3 py-1 rounded text-[10px] font-bold text-slate-300 mono" id="report-date-text">--/--/--</div>
+                <button onclick="toggleLogs()" class="text-[10px] font-black text-slate-400 hover:text-slate-900 transition-colors uppercase tracking-[0.2em]">Health_Logs</button>
+                <div class="bg-slate-100 px-4 py-1.5 rounded-full border border-slate-200 text-[10px] font-bold text-slate-600 mono" id="report-date-text">--/--/--</div>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-[1600px] mx-auto px-6 py-8 flex-1 w-full">
-        <!-- Market Overview Bar -->
-        <div class="mb-8 grid grid-cols-1 lg:grid-cols-12 gap-4">
-            <div class="lg:col-span-9 bg-slate-800/40 p-4 rounded-xl border border-slate-800 flex items-start space-x-4">
-                <div class="bg-indigo-600/20 p-2 rounded text-indigo-400">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                </div>
-                <div>
-                    <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Macro Intelligence Overview</h4>
-                    <p id="market-overview" class="text-sm font-medium text-slate-300 leading-snug italic">Synchronizing market thesis...</p>
+    <main class="max-w-[1600px] mx-auto px-6 py-12 flex-1 w-full">
+        <!-- Dashboard Header -->
+        <div class="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            <div class="lg:col-span-9 bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-indigo-600"></div>
+                <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-4">Tactical Intelligence Brief</h4>
+                <p id="market-overview" class="text-2xl text-slate-800 font-bold leading-tight">Analyzing Bursa Malaysia flow matrices...</p>
+                <div class="mt-8 flex items-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Engine Mode</span>
+                        <span id="analysis-source" class="text-[10px] font-black text-indigo-600 uppercase bg-indigo-50 px-3 py-1 rounded-lg border border-indigo-100 italic">--</span>
+                    </div>
+                    <div class="h-4 w-px bg-slate-200"></div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest text-emerald-600">Live Scanners</span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    </div>
                 </div>
             </div>
-            <div class="lg:col-span-3 bg-slate-800/40 p-4 rounded-xl border border-slate-800 flex flex-col justify-center">
-                <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2 text-center">Intelligence Node</h4>
-                <div class="flex justify-center items-center space-x-3">
-                    <span id="analysis-source" class="text-xs font-black text-indigo-400 uppercase tracking-tighter">--</span>
-                    <span class="text-[10px] font-bold text-slate-600">v6.0_PRO</span>
-                </div>
+            <div class="lg:col-span-3 bg-slate-900 p-8 rounded-[2.5rem] text-white relative overflow-hidden flex flex-col justify-center">
+                 <h4 class="text-[10px] font-black opacity-40 uppercase tracking-[0.4em] mb-2">Shariah_Filter</h4>
+                 <p class="text-xl font-bold leading-tight">100% Verified Compliance</p>
+                 <div class="mt-6 flex space-x-1.5">
+                     <div class="h-1 flex-1 bg-emerald-500 rounded-full"></div>
+                     <div class="h-1 flex-1 bg-emerald-500 rounded-full"></div>
+                     <div class="h-1 flex-1 bg-emerald-800 rounded-full"></div>
+                 </div>
+                 <svg class="absolute -right-4 -bottom-4 w-24 h-24 text-white/5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
             </div>
         </div>
 
-        <!-- Controls Bar -->
-        <div class="mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="flex flex-wrap gap-1.5" id="filter-group">
-                <button class="filter-btn active px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest" data-filter="All">All</button>
-                <button class="filter-btn px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest" data-filter="Technology">Tech</button>
-                <button class="filter-btn px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest" data-filter="Construction">Const</button>
-                <button class="filter-btn px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest" data-filter="Energy">Energy</button>
-                <button class="filter-btn px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest" data-filter="Utilities">Util</button>
-                <button class="filter-btn px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest" data-filter="Consumer">Cons</button>
+        <!-- Toolbar -->
+        <div class="mb-8 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-100 pb-8">
+            <div class="flex flex-wrap gap-2" id="filter-group">
+                <button class="filter-btn active px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="All">All Assets</button>
+                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Technology">Tech</button>
+                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Construction">Infrastructure</button>
+                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Energy">Energy</button>
+                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Utilities">Utilities</button>
+                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Consumer">Consumer</button>
             </div>
-            <div class="flex items-center space-x-4">
-                <span id="picks-count" class="text-[10px] font-black text-slate-500 uppercase">0 Assets</span>
-                <select id="sort-select" class="bg-slate-800 border border-slate-700 rounded px-3 py-1 text-[10px] font-bold uppercase tracking-widest outline-none">
-                    <option value="confidence">By Confidence</option>
-                    <option value="change">By Momentum</option>
-                    <option value="price-asc">Price Asc</option>
-                    <option value="price-desc">Price Desc</option>
+            <div class="flex items-center space-x-6">
+                <span id="picks-count" class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">0 Assets Mapped</span>
+                <select id="sort-select" class="bg-white border border-slate-200 rounded-2xl px-5 py-2 text-[10px] font-black uppercase tracking-widest outline-none shadow-sm hover:border-indigo-400 transition-colors">
+                    <option value="confidence">Sort: Confidence</option>
+                    <option value="change">Sort: Momentum</option>
+                    <option value="price-asc">Sort: Value Low</option>
+                    <option value="price-desc">Sort: Value High</option>
                 </select>
             </div>
         </div>
 
-        <!-- Asset Matrix (Dense Grid) -->
-        <div id="asset-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-20">
-             <!-- Skeleton Loading -->
-             <div class="h-40 bg-slate-800/50 rounded-xl animate-pulse"></div>
-             <div class="h-40 bg-slate-800/50 rounded-xl animate-pulse"></div>
-             <div class="h-40 bg-slate-800/50 rounded-xl animate-pulse"></div>
-             <div class="h-40 bg-slate-800/50 rounded-xl animate-pulse"></div>
-        </div>
+        <!-- Grid (4 Columns) -->
+        <div id="asset-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-24"></div>
     </main>
 
-    <!-- Dense Modal -->
-    <div id="detail-modal" class="modal">
-        <div class="modal-content shadow-2xl overflow-hidden">
-            <div class="p-6 bg-slate-800 border-b border-slate-700 flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <div class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-[9px] font-black rounded uppercase border border-emerald-500/20">Shariah_Compliant</div>
-                    <h2 id="modal-name" class="text-xl font-black tracking-tighter uppercase">--</h2>
-                    <span id="modal-ticker" class="text-xs font-bold text-slate-500 mono">--</span>
+    <footer class="bg-white border-t border-slate-100 py-20 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <span class="text-xl font-black uppercase tracking-tighter">Bursa<span class="text-indigo-600">Blueprint</span></span>
+            <p class="text-slate-400 text-sm mt-3 font-medium">Precision Intelligence for the Shariah Alpha Seeker.</p>
+            <div class="mt-12 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-6">
+                <span class="text-[9px] font-black text-slate-300 uppercase tracking-widest">© 2026 Blueprint Architecture v6.5</span>
+                <div class="flex space-x-6 text-[9px] font-black text-slate-400 uppercase tracking-widest">
+                    <span>Non-Advisory Content</span>
+                    <span>AI Synthesized Data</span>
+                    <span>100% Free Node</span>
                 </div>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-white transition-colors">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content shadow-2xl rounded-[3rem]">
+            <div class="p-10 bg-slate-50 border-b border-slate-100 flex justify-between items-center">
+                <div>
+                    <div class="flex items-center space-x-3 mb-3">
+                        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[8px] font-black rounded uppercase">Verified Compliance</span>
+                        <span id="modal-sector" class="px-2 py-0.5 bg-indigo-100 text-indigo-700 text-[8px] font-black rounded uppercase">Sector</span>
+                    </div>
+                    <h2 id="modal-name" class="text-4xl font-black tracking-tighter text-slate-900 leading-none">--</h2>
+                    <p id="modal-ticker" class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mt-3">--</p>
+                </div>
+                <button onclick="closeModal()" class="p-4 bg-white border border-slate-200 hover:border-indigo-400 rounded-3xl transition-all text-slate-500 shadow-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
-            <div class="p-8 space-y-8 max-h-[75vh] overflow-y-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
-                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-widest block mb-1">Architecture Strategy</span>
-                        <p id="modal-strategy" class="text-sm font-black text-indigo-400 uppercase tracking-tight">--</p>
+            <div class="p-12 space-y-12 max-h-[65vh] overflow-y-auto">
+                <section>
+                    <h4 class="text-[10px] font-black text-indigo-600 uppercase tracking-[0.3em] mb-4">Investment Blueprint</h4>
+                    <p id="modal-thesis" class="text-3xl text-slate-800 font-bold leading-snug tracking-tight">--</p>
+                </section>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h4 class="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] mb-6">Core Catalysts</h4>
+                        <ul id="modal-catalysts" class="space-y-4 text-slate-500 font-bold text-base"></ul>
                     </div>
-                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
-                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-widest block mb-1">Confidence Score</span>
-                        <p id="modal-confidence" class="text-sm font-black text-white uppercase tracking-tight">--</p>
-                    </div>
-                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700 text-right">
-                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-widest block mb-1">Sector Class</span>
-                        <p id="modal-sector" class="text-sm font-black text-slate-300 uppercase tracking-tight">--</p>
+                    <div>
+                        <h4 class="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] mb-6">Structural Risks</h4>
+                        <ul id="modal-risks" class="space-y-4 text-slate-500 font-bold text-base"></ul>
                     </div>
                 </div>
+            </div>
+            <div class="bg-indigo-600 p-8 flex justify-between items-center text-white">
                 <div>
-                    <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3">Investment Thesis</h4>
-                    <p id="modal-thesis" class="text-base text-slate-300 font-medium leading-relaxed">--</p>
+                    <span class="text-[10px] font-bold opacity-70 uppercase tracking-widest block mb-1">Architecture Directive</span>
+                    <span id="modal-strategy" class="text-xl font-black uppercase tracking-wide tracking-tight">--</span>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="space-y-4">
-                        <h4 class="text-[10px] font-black text-emerald-500 uppercase tracking-[0.2em]">Catalysts & Triggers</h4>
-                        <ul id="modal-catalysts" class="space-y-2 text-xs font-medium text-slate-400"></ul>
-                    </div>
-                    <div class="space-y-4">
-                        <h4 class="text-[10px] font-black text-rose-500 uppercase tracking-[0.2em]">Structural Risks</h4>
-                        <ul id="modal-risks" class="space-y-2 text-xs font-medium text-slate-400"></ul>
-                    </div>
+                <div class="text-right">
+                    <span class="text-[10px] font-bold opacity-70 uppercase tracking-widest block mb-1">Confidence Score</span>
+                    <span id="modal-confidence" class="text-3xl font-black tracking-tighter">--/10</span>
                 </div>
             </div>
         </div>
@@ -163,12 +179,14 @@
 
     <!-- Logs Modal -->
     <div id="logs-modal" class="modal">
-        <div class="modal-content max-w-lg bg-slate-900 border-slate-700">
-            <div class="p-4 border-b border-slate-800 flex justify-between items-center">
-                <h3 class="text-xs font-black uppercase tracking-widest">System_Logs</h3>
-                <button onclick="toggleLogs()" class="text-slate-500 hover:text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        <div class="modal-content max-w-2xl bg-slate-900 border border-slate-800 rounded-[2rem] overflow-hidden">
+            <div class="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900">
+                <h3 class="text-white font-black uppercase tracking-widest text-[10px]">Architecture_Logs</h3>
+                <button onclick="toggleLogs()" class="text-slate-500 hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
-            <div class="p-6 h-80 overflow-y-auto font-mono text-[9px] space-y-1 bg-black/30" id="logs-container"></div>
+            <div class="p-10 h-[400px] overflow-y-auto font-mono text-[10px] space-y-2 bg-black/40" id="logs-container"></div>
         </div>
     </div>
 
@@ -195,49 +213,58 @@
             const grid = document.getElementById('asset-grid');
             const sortVal = document.getElementById('sort-select').value;
             let filtered = currentFilter === 'All' ? allPicks : allPicks.filter(p => p.sector === currentFilter);
+            const maxConfidence = filtered.length ? Math.max(...filtered.map(p => p.confidence)) : 0;
             
             if(sortVal === 'confidence') filtered.sort((a,b) => b.confidence - a.confidence);
             else if(sortVal === 'change') filtered.sort((a,b) => Math.abs(b.change_pct || 0) - Math.abs(a.change_pct || 0));
             else if(sortVal === 'price-asc') filtered.sort((a,b) => a.price - b.price);
             else filtered.sort((a,b) => b.price - a.price);
 
-            document.getElementById('picks-count').textContent = `${filtered.length} Assets Identified`;
-            grid.innerHTML = filtered.length ? '' : '<div class="col-span-full py-20 text-center text-slate-500 uppercase font-black text-[10px]">No Assets in this Sector Today</div>';
+            document.getElementById('picks-count').textContent = `${filtered.length} Assets Mapped`;
+            grid.innerHTML = filtered.length ? '' : '<div class="col-span-full py-40 text-center bg-white rounded-[2rem] border border-slate-100"><p class="text-slate-400 font-black uppercase tracking-[0.4em] text-xs italic">Sector matrix is empty for this cycle</p></div>';
 
             filtered.forEach(pick => {
                 const change = pick.change_pct || 0;
                 const isPositive = change >= 0;
                 const vol = pick.vol_spike || 1.0;
+                const isTopConviction = pick.confidence === maxConfidence && maxConfidence >= 8;
                 
                 const card = document.createElement('div');
-                card.className = `matrix-card rounded-xl p-5 flex flex-col shadow-lg ${pick.confidence >= 8 ? 'conviction-edge' : ''}`;
+                card.className = `blueprint-card rounded-[2.5rem] p-8 flex flex-col shadow-sm ${isTopConviction ? 'conviction-indicator shadow-xl shadow-indigo-100' : ''}`;
                 card.onclick = () => openModal(pick);
                 
                 card.innerHTML = `
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <h3 class="text-base font-black tracking-tighter leading-none mb-1">${pick.name}</h3>
-                            <span class="text-[9px] font-bold text-slate-500 uppercase mono">${pick.ticker}</span>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-black tracking-tighter leading-none mb-2 truncate w-44" title="${pick.name}">${pick.name}</h3>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest mono">${pick.ticker}</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[8px] font-black rounded-lg uppercase border border-slate-200">${pick.sector}</span>
+                            </div>
                         </div>
                         <div class="text-right">
-                            <span class="text-lg font-black tracking-tighter">RM ${pick.price.toFixed(3)}</span>
-                            <div class="text-[9px] font-bold text-slate-500 uppercase mt-[-2px] tracking-widest">${pick.sector}</div>
+                            <span class="text-2xl font-black tracking-tighter text-slate-900 block">RM ${pick.price.toFixed(3)}</span>
                         </div>
                     </div>
                     
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="analytic-tag ${isPositive ? 'bg-emerald-500/10 text-emerald-500' : 'bg-rose-500/10 text-rose-500'}">
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="analytic-tag ${isPositive ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-rose-50 text-rose-600 border-rose-100'}">
                             ${isPositive ? '▲' : '▼'} ${Math.abs(change)}%
                         </span>
-                        <span class="analytic-tag bg-slate-700 text-slate-300">Vol: ${vol}x</span>
-                        <span class="analytic-tag bg-indigo-500/10 text-indigo-400">Score: ${pick.confidence}</span>
+                        <span class="analytic-tag bg-slate-50 text-slate-500 border-slate-200">Vol: ${vol}x</span>
+                        <span class="analytic-tag bg-indigo-50 text-indigo-600 border-indigo-100">Conf: ${pick.confidence}</span>
                     </div>
 
-                    <p class="text-[11px] text-slate-400 font-medium leading-relaxed line-clamp-2 italic mb-4">"${pick.analysis}"</p>
+                    <div class="flex-1 mb-8">
+                         <p class="text-[13px] text-slate-500 font-bold leading-relaxed line-clamp-3 italic">"${pick.analysis}"</p>
+                    </div>
 
-                    <div class="mt-auto flex justify-between items-center pt-3 border-t border-slate-700/50">
-                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-widest">${pick.confidence_basis || 'Technical'}</span>
-                        <span class="text-[9px] font-black text-indigo-400 uppercase tracking-tight">${pick.strategy}</span>
+                    <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Protocol</span>
+                            <span class="text-[11px] font-black text-indigo-600 uppercase tracking-tight">${pick.strategy}</span>
+                        </div>
+                        ${isTopConviction ? '<div class="w-6 h-6 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-100"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></div>' : ''}
                     </div>
                 `;
                 grid.appendChild(card);
@@ -250,14 +277,9 @@
             document.getElementById('modal-sector').textContent = pick.sector;
             document.getElementById('modal-thesis').textContent = pick.deep_dive.thesis;
             document.getElementById('modal-strategy').textContent = pick.strategy;
-            document.getElementById('modal-confidence').textContent = `${pick.confidence}/10 (Basis: ${pick.confidence_basis || 'Flow Analysis'})`;
-            
-            const cats = document.getElementById('modal-catalysts');
-            cats.innerHTML = (pick.deep_dive.catalysts || []).map(c => `<li>• ${c}</li>`).join('');
-            
-            const risks = document.getElementById('modal-risks');
-            risks.innerHTML = (pick.deep_dive.risks || []).map(r => `<li>• ${r}</li>`).join('');
-            
+            document.getElementById('modal-confidence').textContent = `${pick.confidence}/10`;
+            document.getElementById('modal-catalysts').innerHTML = (pick.deep_dive.catalysts || []).map(c => `<li>• ${c}</li>`).join('');
+            document.getElementById('modal-risks').innerHTML = (pick.deep_dive.risks || []).map(r => `<li>• ${r}</li>`).join('');
             document.getElementById('detail-modal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
