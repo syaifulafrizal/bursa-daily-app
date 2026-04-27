@@ -1,6 +1,6 @@
 {
   "date": "2026-04-27",
-  "market_overview": "Market Universe scan active. Technical metrics indicate a consolidation phase with selective institutional flow into value-oriented Shariah counters.",
+  "market_overview": "Market scan complete. Current sentiment is shifting toward high-volume laggards. Technical patterns suggest institutional rebalancing across Shariah mid-caps.",
   "top_picks": [
     {
       "ticker": "0132.KL",
@@ -10,16 +10,352 @@
       "confidence": 7,
       "strategy": "ACCUMULATE",
       "confidence_basis": "Volatility Expansion",
-      "analysis": "CYPARK is exhibiting technical interest in the Utilities sector. Price shifted 16.67% on 0.47x relative volume.",
+      "analysis": "CYPARK is exhibiting technical interest in the Utilities sector. Price shifted 16.67% on 0.69x relative volume.",
       "deep_dive": {
-        "thesis": "Logic analysis for CYPARK suggests institutional rebalancing based on 10-day volume flow.",
+        "thesis": "Flow analysis for CYPARK suggests institutional interest based on 10-day price/volume dynamics.",
         "catalysts": [
-          "0.47x Average Daily Volume",
-          "Technical Support established"
+          "0.69x Relative Volume",
+          "Support zone confirmed"
         ],
         "risks": [
-          "Liquidity constraints",
-          "Broader sector volatility"
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "0166.KL",
+      "name": "INARI",
+      "sector": "Technology",
+      "price": 2.04,
+      "confidence": 8,
+      "strategy": "BULLISH BREAKOUT",
+      "confidence_basis": "High Momentum",
+      "analysis": "INARI is exhibiting technical interest in the Technology sector. Price shifted 12.09% on 2.29x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for INARI suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "2.29x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "7052.KL",
+      "name": "QL",
+      "sector": "Consumer",
+      "price": 1.42,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "QL is exhibiting technical interest in the Consumer sector. Price shifted -8.39% on 8.02x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for QL suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "8.02x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "5005.KL",
+      "name": "UNISEM",
+      "sector": "Industrial",
+      "price": 3.3,
+      "confidence": 8,
+      "strategy": "BULLISH BREAKOUT",
+      "confidence_basis": "High Momentum",
+      "analysis": "UNISEM is exhibiting technical interest in the Industrial sector. Price shifted 7.14% on 2.8x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for UNISEM suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "2.8x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "5190.KL",
+      "name": "WASCO",
+      "sector": "Energy",
+      "price": 0.08,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "WASCO is exhibiting technical interest in the Energy sector. Price shifted 6.67% on 0.67x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for WASCO suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "0.67x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "5223.KL",
+      "name": "ECONBHD",
+      "sector": "Construction",
+      "price": 0.6,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "ECONBHD is exhibiting technical interest in the Construction sector. Price shifted 6.19% on 0.02x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for ECONBHD suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "0.02x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "5148.KL",
+      "name": "UEMS",
+      "sector": "Property",
+      "price": 0.575,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "UEMS is exhibiting technical interest in the Property sector. Price shifted 4.55% on 1.54x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for UEMS suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "1.54x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "5340.KL",
+      "name": "GADANG",
+      "sector": "Construction",
+      "price": 6.53,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "GADANG is exhibiting technical interest in the Construction sector. Price shifted 5.15% on 0.3x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for GADANG suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "0.3x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "8877.KL",
+      "name": "EKOVEST",
+      "sector": "Construction",
+      "price": 0.225,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "EKOVEST is exhibiting technical interest in the Construction sector. Price shifted -4.26% on 1.0x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for EKOVEST suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "1.0x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "5301.KL",
+      "name": "99SMART",
+      "sector": "Consumer",
+      "price": 0.735,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "99SMART is exhibiting technical interest in the Consumer sector. Price shifted 3.52% on 0.87x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for 99SMART suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "0.87x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "0023.KL",
+      "name": "IFCA",
+      "sector": "Technology",
+      "price": 0.215,
+      "confidence": 8,
+      "strategy": "BULLISH BREAKOUT",
+      "confidence_basis": "High Momentum",
+      "analysis": "IFCA is exhibiting technical interest in the Technology sector. Price shifted 2.38% on 2.51x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for IFCA suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "2.51x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "0097.KL",
+      "name": "VITROX",
+      "sector": "Technology",
+      "price": 5.66,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "VITROX is exhibiting technical interest in the Technology sector. Price shifted 2.54% on 1.8x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for VITROX suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "1.8x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "8583.KL",
+      "name": "MAHSING",
+      "sector": "Property",
+      "price": 1.08,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "MAHSING is exhibiting technical interest in the Property sector. Price shifted 2.86% on 0.61x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for MAHSING suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "0.61x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "7006.KL",
+      "name": "D&O",
+      "sector": "Technology",
+      "price": 1.1,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "D&O is exhibiting technical interest in the Technology sector. Price shifted 0.0% on 5.95x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for D&O suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "5.95x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "5248.KL",
+      "name": "MRDIY",
+      "sector": "Consumer",
+      "price": 0.935,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "MRDIY is exhibiting technical interest in the Consumer sector. Price shifted -2.6% on 0.74x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for MRDIY suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "0.74x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "7277.KL",
+      "name": "DIALOG",
+      "sector": "Energy",
+      "price": 2.29,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "DIALOG is exhibiting technical interest in the Energy sector. Price shifted 2.69% on 0.41x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for DIALOG suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "0.41x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "5250.KL",
+      "name": "7ELEVEN",
+      "sector": "Consumer",
+      "price": 2.0,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "7ELEVEN is exhibiting technical interest in the Consumer sector. Price shifted 1.01% on 3.61x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for 7ELEVEN suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "3.61x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
         ]
       }
     },
@@ -31,61 +367,145 @@
       "confidence": 7,
       "strategy": "ACCUMULATE",
       "confidence_basis": "Volatility Expansion",
-      "analysis": "PHARMA is exhibiting technical interest in the Healthcare sector. Price shifted -2.04% on 0.42x relative volume.",
+      "analysis": "PHARMA is exhibiting technical interest in the Healthcare sector. Price shifted -2.04% on 0.43x relative volume.",
       "deep_dive": {
-        "thesis": "Logic analysis for PHARMA suggests institutional rebalancing based on 10-day volume flow.",
+        "thesis": "Flow analysis for PHARMA suggests institutional interest based on 10-day price/volume dynamics.",
         "catalysts": [
-          "0.42x Average Daily Volume",
-          "Technical Support established"
+          "0.43x Relative Volume",
+          "Support zone confirmed"
         ],
         "risks": [
-          "Liquidity constraints",
-          "Broader sector volatility"
+          "Sector rotation volatility",
+          "Liquidity constraints"
         ]
       }
     },
     {
-      "ticker": "5212.KL",
-      "name": "TGC",
-      "sector": "Consumer",
-      "price": 1.83,
-      "confidence": 6,
-      "strategy": "WATCHLIST",
-      "confidence_basis": "Trend Neutral",
-      "analysis": "TGC is exhibiting technical interest in the Consumer sector. Price shifted 0.55% on 0.9x relative volume.",
+      "ticker": "0219.KL",
+      "name": "RLINK",
+      "sector": "Energy",
+      "price": 0.26,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "RLINK is exhibiting technical interest in the Energy sector. Price shifted -1.89% on 0.71x relative volume.",
       "deep_dive": {
-        "thesis": "Logic analysis for TGC suggests institutional rebalancing based on 10-day volume flow.",
+        "thesis": "Flow analysis for RLINK suggests institutional interest based on 10-day price/volume dynamics.",
         "catalysts": [
-          "0.9x Average Daily Volume",
-          "Technical Support established"
+          "0.71x Relative Volume",
+          "Support zone confirmed"
         ],
         "risks": [
-          "Liquidity constraints",
-          "Broader sector volatility"
+          "Sector rotation volatility",
+          "Liquidity constraints"
         ]
       }
     },
     {
-      "ticker": "5109.KL",
-      "name": "CHINHIN",
-      "sector": "Industrial",
-      "price": 1.0,
-      "confidence": 6,
-      "strategy": "WATCHLIST",
-      "confidence_basis": "Trend Neutral",
-      "analysis": "CHINHIN is exhibiting technical interest in the Industrial sector. Price shifted 0.5% on 0.23x relative volume.",
+      "ticker": "0235.KL",
+      "name": "SNS",
+      "sector": "Technology",
+      "price": 0.34,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "SNS is exhibiting technical interest in the Technology sector. Price shifted 1.49% on 1.49x relative volume.",
       "deep_dive": {
-        "thesis": "Logic analysis for CHINHIN suggests institutional rebalancing based on 10-day volume flow.",
+        "thesis": "Flow analysis for SNS suggests institutional interest based on 10-day price/volume dynamics.",
         "catalysts": [
-          "0.23x Average Daily Volume",
-          "Technical Support established"
+          "1.49x Relative Volume",
+          "Support zone confirmed"
         ],
         "risks": [
-          "Liquidity constraints",
-          "Broader sector volatility"
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "0128.KL",
+      "name": "FRONTKN",
+      "sector": "Technology",
+      "price": 4.39,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "FRONTKN is exhibiting technical interest in the Technology sector. Price shifted 1.62% on 1.12x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for FRONTKN suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "1.12x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "1651.KL",
+      "name": "MRCB",
+      "sector": "Construction",
+      "price": 0.315,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "MRCB is exhibiting technical interest in the Construction sector. Price shifted -1.56% on 1.23x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for MRCB suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "1.23x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "0151.KL",
+      "name": "CTOS",
+      "sector": "Technology",
+      "price": 6.35,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "CTOS is exhibiting technical interest in the Technology sector. Price shifted 1.6% on 0.56x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for CTOS suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "0.56x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
+        ]
+      }
+    },
+    {
+      "ticker": "5243.KL",
+      "name": "VELESTO",
+      "sector": "Energy",
+      "price": 0.325,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Volatility Expansion",
+      "analysis": "VELESTO is exhibiting technical interest in the Energy sector. Price shifted 1.56% on 0.4x relative volume.",
+      "deep_dive": {
+        "thesis": "Flow analysis for VELESTO suggests institutional interest based on 10-day price/volume dynamics.",
+        "catalysts": [
+          "0.4x Relative Volume",
+          "Support zone confirmed"
+        ],
+        "risks": [
+          "Sector rotation volatility",
+          "Liquidity constraints"
         ]
       }
     }
   ],
-  "source": "Logic Engine"
+  "source": "Logic Engine v5.7"
 }
