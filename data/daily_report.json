@@ -1,6 +1,6 @@
 {
   "date": "2026-04-27",
-  "market_overview": "Asset Architect scan active. Current rotation is favoring Shariah-compliant value plays with robust accumulation patterns.",
+  "market_overview": "Market Universe scan active. High volume rebalancing detected in key laggard sectors.",
   "top_picks": [
     {
       "ticker": "0132.KL",
@@ -9,106 +9,82 @@
       "price": 0.035,
       "confidence": 7,
       "strategy": "ACCUMULATE",
-      "analysis": "CYPARK is exhibiting institutional-grade strength in the Utilities sector. Price shifted 16.67% on 0.47x relative volume."
+      "confidence_basis": "Breakout momentum",
+      "analysis": "CYPARK is exhibiting technical strength in the Utilities sector. Price shifted 16.67% on 0.47x relative volume.",
+      "deep_dive": {
+        "thesis": "Technical setup in CYPARK is driven by a volume anomaly in the Utilities sector.",
+        "catalysts": [
+          "0.47x Average Daily Volume",
+          "Support zone established"
+        ],
+        "risks": [
+          "Broader market volatility",
+          "Sector rotation risk"
+        ]
+      }
     },
     {
-      "ticker": "7052.KL",
-      "name": "QL",
+      "ticker": "7081.KL",
+      "name": "PHARMA",
+      "sector": "Healthcare",
+      "price": 0.24,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "confidence_basis": "Breakout momentum",
+      "analysis": "PHARMA is exhibiting technical strength in the Healthcare sector. Price shifted -2.04% on 0.34x relative volume.",
+      "deep_dive": {
+        "thesis": "Technical setup in PHARMA is driven by a volume anomaly in the Healthcare sector.",
+        "catalysts": [
+          "0.34x Average Daily Volume",
+          "Support zone established"
+        ],
+        "risks": [
+          "Broader market volatility",
+          "Sector rotation risk"
+        ]
+      }
+    },
+    {
+      "ticker": "5212.KL",
+      "name": "TGC",
       "sector": "Consumer",
-      "price": 1.43,
-      "confidence": 7,
-      "strategy": "ACCUMULATE",
-      "analysis": "QL is exhibiting institutional-grade strength in the Consumer sector. Price shifted -7.74% on 7.84x relative volume."
+      "price": 1.83,
+      "confidence": 6,
+      "strategy": "WATCHLIST",
+      "confidence_basis": "Volume activity",
+      "analysis": "TGC is exhibiting technical strength in the Consumer sector. Price shifted 0.55% on 0.64x relative volume.",
+      "deep_dive": {
+        "thesis": "Technical setup in TGC is driven by a volume anomaly in the Consumer sector.",
+        "catalysts": [
+          "0.64x Average Daily Volume",
+          "Support zone established"
+        ],
+        "risks": [
+          "Broader market volatility",
+          "Sector rotation risk"
+        ]
+      }
     },
     {
-      "ticker": "0166.KL",
-      "name": "INARI",
-      "sector": "Technology",
-      "price": 1.98,
-      "confidence": 7,
-      "strategy": "ACCUMULATE",
-      "analysis": "INARI is exhibiting institutional-grade strength in the Technology sector. Price shifted 8.79% on 1.26x relative volume."
-    },
-    {
-      "ticker": "5005.KL",
-      "name": "UNISEM",
+      "ticker": "5109.KL",
+      "name": "CHINHIN",
       "sector": "Industrial",
-      "price": 3.3,
-      "confidence": 8,
-      "strategy": "BULLISH BREAKOUT",
-      "analysis": "UNISEM is exhibiting institutional-grade strength in the Industrial sector. Price shifted 7.14% on 2.3x relative volume."
-    },
-    {
-      "ticker": "5190.KL",
-      "name": "WASCO",
-      "sector": "Energy",
-      "price": 0.08,
-      "confidence": 7,
-      "strategy": "ACCUMULATE",
-      "analysis": "WASCO is exhibiting institutional-grade strength in the Energy sector. Price shifted 6.67% on 0.67x relative volume."
-    },
-    {
-      "ticker": "5223.KL",
-      "name": "ECONBHD",
-      "sector": "Construction",
-      "price": 0.6,
-      "confidence": 7,
-      "strategy": "ACCUMULATE",
-      "analysis": "ECONBHD is exhibiting institutional-grade strength in the Construction sector. Price shifted 6.19% on 0.02x relative volume."
-    },
-    {
-      "ticker": "5340.KL",
-      "name": "GADANG",
-      "sector": "Construction",
-      "price": 6.53,
-      "confidence": 7,
-      "strategy": "ACCUMULATE",
-      "analysis": "GADANG is exhibiting institutional-grade strength in the Construction sector. Price shifted 5.15% on 0.3x relative volume."
-    },
-    {
-      "ticker": "5148.KL",
-      "name": "IJM",
-      "sector": "Construction",
-      "price": 0.575,
-      "confidence": 7,
-      "strategy": "ACCUMULATE",
-      "analysis": "IJM is exhibiting institutional-grade strength in the Construction sector. Price shifted 4.55% on 1.48x relative volume."
-    },
-    {
-      "ticker": "5210.KL",
-      "name": "ARMADA",
-      "sector": "Energy",
-      "price": 0.395,
-      "confidence": 7,
-      "strategy": "ACCUMULATE",
-      "analysis": "ARMADA is exhibiting institutional-grade strength in the Energy sector. Price shifted -3.66% on 0.37x relative volume."
-    },
-    {
-      "ticker": "0023.KL",
-      "name": "IFCA",
-      "sector": "Technology",
-      "price": 0.215,
-      "confidence": 8,
-      "strategy": "BULLISH BREAKOUT",
-      "analysis": "IFCA is exhibiting institutional-grade strength in the Technology sector. Price shifted 2.38% on 2.03x relative volume."
-    },
-    {
-      "ticker": "7277.KL",
-      "name": "DIALOG",
-      "sector": "Energy",
-      "price": 2.3,
-      "confidence": 7,
-      "strategy": "ACCUMULATE",
-      "analysis": "DIALOG is exhibiting institutional-grade strength in the Energy sector. Price shifted 3.14% on 0.35x relative volume."
-    },
-    {
-      "ticker": "5250.KL",
-      "name": "7ELEVEN",
-      "sector": "Consumer",
-      "price": 2.0,
-      "confidence": 7,
-      "strategy": "ACCUMULATE",
-      "analysis": "7ELEVEN is exhibiting institutional-grade strength in the Consumer sector. Price shifted 1.01% on 3.61x relative volume."
+      "price": 1.0,
+      "confidence": 6,
+      "strategy": "WATCHLIST",
+      "confidence_basis": "Volume activity",
+      "analysis": "CHINHIN is exhibiting technical strength in the Industrial sector. Price shifted 0.5% on 0.21x relative volume.",
+      "deep_dive": {
+        "thesis": "Technical setup in CHINHIN is driven by a volume anomaly in the Industrial sector.",
+        "catalysts": [
+          "0.21x Average Daily Volume",
+          "Support zone established"
+        ],
+        "risks": [
+          "Broader market volatility",
+          "Sector rotation risk"
+        ]
+      }
     }
   ]
 }
