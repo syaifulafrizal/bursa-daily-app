@@ -1,114 +1,114 @@
 {
-  "date": "2026-04-26",
+  "date": "2026-04-27",
   "market_overview": "Market Universe scan active. Current rotation is favoring mid-cap Shariah counters with unusual volume activity.",
   "top_picks": [
     {
-      "ticker": "0097.KL",
-      "name": "VITROX",
+      "ticker": "0166.KL",
+      "name": "INARI",
       "sector": "Technology",
-      "price": 5.52,
-      "confidence": 9,
-      "strategy": "HIGH MOMENTUM BUY",
-      "analysis": "The asset VITROX is showing robust technical strength in the Technology sector. Price shifted 10.84% on high relative volume (4.51x avg)."
-    },
-    {
-      "ticker": "8877.KL",
-      "name": "EKOVEST",
-      "sector": "Construction",
-      "price": 0.235,
+      "price": 1.96,
       "confidence": 7,
       "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset EKOVEST is showing robust technical strength in the Construction sector. Price shifted 6.82% on high relative volume (1.33x avg)."
+      "analysis": "The asset INARI is showing robust technical strength in the Technology sector. Price shifted 7.69% on high relative volume (0.93x avg)."
     },
     {
       "ticker": "5148.KL",
       "name": "IJM",
       "sector": "Construction",
-      "price": 0.55,
-      "confidence": 9,
-      "strategy": "HIGH MOMENTUM BUY",
-      "analysis": "The asset IJM is showing robust technical strength in the Construction sector. Price shifted 5.77% on high relative volume (2.88x avg)."
-    },
-    {
-      "ticker": "5398.KL",
-      "name": "GAMUDA",
-      "sector": "Construction",
-      "price": 4.3,
+      "price": 0.57,
       "confidence": 7,
       "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset GAMUDA is showing robust technical strength in the Construction sector. Price shifted -3.59% on high relative volume (1.37x avg)."
+      "analysis": "The asset IJM is showing robust technical strength in the Construction sector. Price shifted 3.64% on high relative volume (1.24x avg)."
     },
     {
-      "ticker": "5226.KL",
-      "name": "GBGAQRS",
-      "sector": "Construction",
-      "price": 0.16,
+      "ticker": "0097.KL",
+      "name": "VITROX",
+      "sector": "Technology",
+      "price": 5.66,
       "confidence": 7,
       "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset GBGAQRS is showing robust technical strength in the Construction sector. Price shifted 3.23% on high relative volume (1.23x avg)."
+      "analysis": "The asset VITROX is showing robust technical strength in the Technology sector. Price shifted 2.54% on high relative volume (1.18x avg)."
     },
     {
-      "ticker": "5168.KL",
-      "name": "HARTA",
-      "sector": "Healthcare",
-      "price": 1.14,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset HARTA is showing robust technical strength in the Healthcare sector. Price shifted -3.39% on high relative volume (0.82x avg)."
-    },
-    {
-      "ticker": "0215.KL",
-      "name": "SLVEST",
-      "sector": "Utilities",
-      "price": 2.85,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset SLVEST is showing robust technical strength in the Utilities sector. Price shifted 2.89% on high relative volume (1.74x avg)."
-    },
-    {
-      "ticker": "0219.KL",
-      "name": "RLINK",
-      "sector": "Energy",
-      "price": 0.265,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset RLINK is showing robust technical strength in the Energy sector. Price shifted 1.92% on high relative volume (0.75x avg)."
-    },
-    {
-      "ticker": "7153.KL",
-      "name": "KOSSAN",
-      "sector": "Healthcare",
-      "price": 1.11,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset KOSSAN is showing robust technical strength in the Healthcare sector. Price shifted -1.77% on high relative volume (0.82x avg)."
-    },
-    {
-      "ticker": "5296.KL",
-      "name": "AEON",
+      "ticker": "5248.KL",
+      "name": "MRDIY",
       "sector": "Consumer",
-      "price": 1.7,
+      "price": 0.935,
       "confidence": 7,
       "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset AEON is showing robust technical strength in the Consumer sector. Price shifted 1.8% on high relative volume (0.76x avg)."
+      "analysis": "The asset MRDIY is showing robust technical strength in the Consumer sector. Price shifted -2.6% on high relative volume (0.63x avg)."
     },
     {
       "ticker": "0128.KL",
       "name": "FRONTKN",
       "sector": "Technology",
-      "price": 4.32,
+      "price": 4.43,
       "confidence": 7,
       "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset FRONTKN is showing robust technical strength in the Technology sector. Price shifted 0.7% on high relative volume (2.59x avg)."
+      "analysis": "The asset FRONTKN is showing robust technical strength in the Technology sector. Price shifted 2.55% on high relative volume (0.52x avg)."
     },
     {
-      "ticker": "5133.KL",
-      "name": "PTRANS",
+      "ticker": "7277.KL",
+      "name": "DIALOG",
       "sector": "Energy",
-      "price": 0.7,
+      "price": 2.29,
       "confidence": 7,
       "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset PTRANS is showing robust technical strength in the Energy sector. Price shifted -1.41% on high relative volume (1.06x avg)."
+      "analysis": "The asset DIALOG is showing robust technical strength in the Energy sector. Price shifted 2.69% on high relative volume (0.18x avg)."
+    },
+    {
+      "ticker": "5210.KL",
+      "name": "ARMADA",
+      "sector": "Energy",
+      "price": 0.4,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "The asset ARMADA is showing robust technical strength in the Energy sector. Price shifted -2.44% on high relative volume (0.19x avg)."
+    },
+    {
+      "ticker": "8877.KL",
+      "name": "EKOVEST",
+      "sector": "Construction",
+      "price": 0.23,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "The asset EKOVEST is showing robust technical strength in the Construction sector. Price shifted -2.13% on high relative volume (0.32x avg)."
+    },
+    {
+      "ticker": "8583.KL",
+      "name": "MAHSING",
+      "sector": "Property",
+      "price": 1.07,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "The asset MAHSING is showing robust technical strength in the Property sector. Price shifted 1.9% on high relative volume (0.53x avg)."
+    },
+    {
+      "ticker": "5183.KL",
+      "name": "PCHEM",
+      "sector": "Energy",
+      "price": 5.61,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "The asset PCHEM is showing robust technical strength in the Energy sector. Price shifted 2.0% on high relative volume (0.16x avg)."
+    },
+    {
+      "ticker": "7153.KL",
+      "name": "KOSSAN",
+      "sector": "Healthcare",
+      "price": 1.09,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "The asset KOSSAN is showing robust technical strength in the Healthcare sector. Price shifted -1.8% on high relative volume (0.37x avg)."
+    },
+    {
+      "ticker": "0138.KL",
+      "name": "MYEG",
+      "sector": "Technology",
+      "price": 0.875,
+      "confidence": 7,
+      "strategy": "ACCUMULATE ON DIPS",
+      "analysis": "The asset MYEG is showing robust technical strength in the Technology sector. Price shifted 1.74% on high relative volume (0.3x avg)."
     }
   ]
 }
