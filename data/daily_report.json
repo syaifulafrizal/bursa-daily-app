@@ -1,6 +1,172 @@
 {
   "date": "2026-04-27",
-  "market_overview": "Initial synchronization in progress. Market data is being synthesized from the Shariah Universe.",
-  "source": "System Initializer",
-  "top_picks": []
+  "market_overview": "Bursa Malaysia is witnessing a high-velocity rotation into Technology and Infrastructure. The semiconductor sector, led by Inari's massive RM1.80 breakout, is the primary theme today, supported by significant data centre contract flow in the construction space.",
+  "source": "Manual Agent Architect (In-Context)",
+  "top_picks": [
+    {
+      "ticker": "0166.KL",
+      "name": "INARI",
+      "sector": "Technology",
+      "price": 2.06,
+      "confidence": 9,
+      "confidence_basis": "Major Technical Breakout",
+      "strategy": "BUY ON BREAKOUT",
+      "analysis": "Inari has surged +13.19% on 2.77x relative volume, crushing the RM1.80 resistance. The termination of the Lumileds deal is being cheered by the market as it removes an earnings overhang.",
+      "deep_dive": {
+        "thesis": "Inari is entering a new bullish phase as it pivots back to its core high-margin RF and fiber segments. The market has re-rated the stock following the strategic decision to abandon the Lumileds acquisition.",
+        "catalysts": ["Breakout above RM1.80 resistance", "Lumileds deal termination removes risk", "Strong institutional inflow (2.7x volume)"],
+        "risks": ["Short-term profit taking after +13% surge", "US semiconductor sentiment volatility"]
+      }
+    },
+    {
+      "ticker": "5148.KL",
+      "name": "IJM",
+      "sector": "Construction",
+      "price": 0.59,
+      "confidence": 8,
+      "confidence_basis": "Large Contract Win",
+      "strategy": "ACCUMULATE",
+      "analysis": "IJM is riding the Data Centre boom with a new RM658m contract win. The order book is now a massive RM9.1b, with 43% focused on digital infrastructure.",
+      "deep_dive": {
+        "thesis": "IJM has successfully transitioned into a premier data centre builder. The rejection of the Sunway takeover offer at RM3.15 signals that the board (and market) values the company significantly higher.",
+        "catalysts": ["RM658m Hyperscale Data Centre contract", "RM9.1b total order book visibility", "Sunway offer rejection confirms intrinsic value"],
+        "risks": ["Rising raw material costs in construction", "General infrastructure budget delays"]
+      }
+    },
+    {
+      "ticker": "5226.KL",
+      "name": "GBGAQRS",
+      "sector": "Construction",
+      "price": 0.17,
+      "confidence": 7,
+      "confidence_basis": "Laggard Recovery",
+      "strategy": "WATCHLIST",
+      "analysis": "Showing signs of a bottom-reversal (+6.25%) on 2.2x volume. Focus is on project handovers (LRT3) which will significantly improve cash flow in mid-2026.",
+      "deep_dive": {
+        "thesis": "Gabungan AQRS is a classic laggard value play. As major legacy projects like LRT3 reach completion, the release of retention sums will repair the balance sheet.",
+        "catalysts": ["Completion of LRT3 project", "Potential new order book replenishment in 2H2026", "Trading at a steep discount to book value"],
+        "risks": ["Small cap volatility", "Dependence on new contract wins post-LRT3"]
+      }
+    },
+    {
+      "ticker": "0128.KL",
+      "name": "FRONTKN",
+      "sector": "Technology",
+      "price": 4.41,
+      "confidence": 7,
+      "confidence_basis": "Sector Rotation",
+      "strategy": "ACCUMULATE",
+      "analysis": "Benefiting from the spillover interest in Inari. Technicals show a steady +2.08% climb on healthy 1.6x volume.",
+      "deep_dive": {
+        "thesis": "Frontken provides precision cleaning services for the chip industry and is a lower-beta way to play the semi-conductor recovery.",
+        "catalysts": ["Increased foundry utilization rates", "Expansion in Singapore and Taiwan nodes", "Correlated Tech sector rally"],
+        "risks": ["Sensitivity to global wafer shipment volumes", "Taiwan geopolitical tensions"]
+      }
+    },
+    {
+      "ticker": "5301.KL",
+      "name": "99SMART",
+      "sector": "Consumer",
+      "price": 0.735,
+      "confidence": 7,
+      "confidence_basis": "Support Defense",
+      "strategy": "ACCUMULATE",
+      "analysis": "Strong defensive rebound (+3.52%) from psychological support levels. Retail demand remains sticky despite inflationary pressures.",
+      "deep_dive": {
+        "thesis": "99 Speedmart is the premier recession-proof play on Bursa. Its high-frequency retail model generates consistent cash flow regardless of macro cycles.",
+        "catalysts": ["Continued network expansion (target 3,000 stores)", "Strong same-store-sales-growth (SSSG)", "Inclusion in upcoming indices"],
+        "risks": ["Minimum wage hikes affecting margins", "Competition from other mini-mart chains"]
+      }
+    },
+    {
+      "ticker": "0097.KL",
+      "name": "VITROX",
+      "sector": "Technology",
+      "price": 5.61,
+      "confidence": 6,
+      "confidence_basis": "Steady Accumulation",
+      "strategy": "WATCHLIST",
+      "analysis": "Up +1.63% on high volume (2.46x). Institutional rebalancing into high-quality ATE (Automated Test Equipment) makers is evident.",
+      "deep_dive": {
+        "thesis": "ViTrox is a long-term compounder. While current growth is moderate, the transition to AI-integrated inspection systems is a multi-year tailwind.",
+        "catalysts": ["AI-driven automated inspection demand", "New campus capacity expansion", "Global semi-conductor equipment recovery"],
+        "risks": ["Premium P/E valuation makes it sensitive to earnings misses", "Slowdown in non-AI electronics demand"]
+      }
+    },
+    {
+      "ticker": "8583.KL",
+      "name": "MAHSING",
+      "sector": "Property",
+      "price": 1.07,
+      "confidence": 6,
+      "confidence_basis": "Property Interest",
+      "strategy": "WATCHLIST",
+      "analysis": "Stable price action (+1.9%). Benefiting from the Johor property theme and the expansion into the industrial/data centre land segments.",
+      "deep_dive": {
+        "thesis": "Mah Sing is no longer just a residential developer. Its quick turnaround model and recent pivot to Industrial parks provide higher margin visibility.",
+        "catalysts": ["M-Industrial park land sales", "Johor-Singapore SEZ positive sentiment", "High dividends (4%+ yield)"],
+        "risks": ["Interest rate sensitivity", "Domestic oversupply in residential high-rise"]
+      }
+    },
+    {
+      "ticker": "5248.KL",
+      "name": "MRDIY",
+      "sector": "Consumer",
+      "price": 0.94,
+      "confidence": 5,
+      "confidence_basis": "Consolidation",
+      "strategy": "MONITOR",
+      "analysis": "Currently facing slight selling pressure (-2.08%). Investors are waiting for the impact of subsidy reforms on consumer spending to be fully priced in.",
+      "deep_dive": {
+        "thesis": "Wait and see. MR DIY has strong fundamentals, but the consumer sector is currently a laggard compared to Tech/Construction.",
+        "catalysts": ["Potential earnings beat in upcoming quarter", "Slower than expected inflation", "Dividends"],
+        "risks": ["Inflationary impact on disposable income", "High logistic costs"]
+      }
+    },
+    {
+      "ticker": "5210.KL",
+      "name": "ARMADA",
+      "sector": "Energy",
+      "price": 0.40,
+      "confidence": 5,
+      "confidence_basis": "Volatility",
+      "strategy": "WATCHLIST",
+      "analysis": "Energy sector is currently consolidating. Armada is trading flat (-2.4%) awaiting the next major FPSO contract announcement.",
+      "deep_dive": {
+        "thesis": "High-risk, high-reward. The stock needs a major contract win (e.g. in Angola or Indonesia) to re-rate from current levels.",
+        "catalysts": ["FPSO contract bidding results", "Stronger oil prices > $85", "Debt reduction progress"],
+        "risks": ["Project delay risks", "Technical breakdown on old FPSO vessels"]
+      }
+    },
+    {
+      "ticker": "0132.KL",
+      "name": "CYPARK",
+      "sector": "Utilities",
+      "price": 0.035,
+      "confidence": 4,
+      "confidence_basis": "Penny Speculation",
+      "strategy": "AVOID",
+      "analysis": "Highly volatile (+16% move on low base). Lack of fundamental clarity makes it a purely speculative trading play for now.",
+      "deep_dive": {
+        "thesis": "Avoid for serious portfolios. The business requires significant restructuring and new RE project financing before it becomes investable.",
+        "catalysts": ["Successful white knight entry", "Debt restructuring completion", "LSS4 project milestones"],
+        "risks": ["Liquidity risk", "Potential dilutive cash calls"]
+      }
+    },
+    {
+      "ticker": "2739.KL",
+      "name": "PMETAL",
+      "sector": "Industrial",
+      "price": 0.025,
+      "confidence": 4,
+      "confidence_basis": "Bearish Pressure",
+      "strategy": "AVOID",
+      "analysis": "Sharp sell-off (-16.6%) on extreme volume (6.0x). Technical structure is broken; avoid until a clear floor is established.",
+      "deep_dive": {
+        "thesis": "Wait for dust to settle. Global aluminum prices and rising carbon tax concerns are weighing on the regional smelting giant.",
+        "catalysts": ["Floor at lower support levels", "Recovery in aluminum LME prices", "ESG compliance breakthroughs"],
+        "risks": ["Continued technical dumping", "Global economic slowdown"]
+      }
+    }
+  ]
 }
