@@ -1,114 +1,114 @@
 {
   "date": "2026-04-27",
-  "market_overview": "Market Universe scan active. Current rotation is favoring mid-cap Shariah counters with unusual volume activity.",
+  "market_overview": "Asset Architect scan active. Current rotation is favoring Shariah-compliant value plays with robust accumulation patterns.",
   "top_picks": [
+    {
+      "ticker": "0132.KL",
+      "name": "CYPARK",
+      "sector": "Utilities",
+      "price": 0.035,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "analysis": "CYPARK is exhibiting institutional-grade strength in the Utilities sector. Price shifted 16.67% on 0.47x relative volume."
+    },
+    {
+      "ticker": "7052.KL",
+      "name": "QL",
+      "sector": "Consumer",
+      "price": 1.43,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "analysis": "QL is exhibiting institutional-grade strength in the Consumer sector. Price shifted -7.74% on 7.84x relative volume."
+    },
     {
       "ticker": "0166.KL",
       "name": "INARI",
       "sector": "Technology",
-      "price": 1.96,
+      "price": 1.98,
       "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset INARI is showing robust technical strength in the Technology sector. Price shifted 7.69% on high relative volume (0.93x avg)."
+      "strategy": "ACCUMULATE",
+      "analysis": "INARI is exhibiting institutional-grade strength in the Technology sector. Price shifted 8.79% on 1.26x relative volume."
+    },
+    {
+      "ticker": "5005.KL",
+      "name": "UNISEM",
+      "sector": "Industrial",
+      "price": 3.3,
+      "confidence": 8,
+      "strategy": "BULLISH BREAKOUT",
+      "analysis": "UNISEM is exhibiting institutional-grade strength in the Industrial sector. Price shifted 7.14% on 2.3x relative volume."
+    },
+    {
+      "ticker": "5190.KL",
+      "name": "WASCO",
+      "sector": "Energy",
+      "price": 0.08,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "analysis": "WASCO is exhibiting institutional-grade strength in the Energy sector. Price shifted 6.67% on 0.67x relative volume."
+    },
+    {
+      "ticker": "5223.KL",
+      "name": "ECONBHD",
+      "sector": "Construction",
+      "price": 0.6,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "analysis": "ECONBHD is exhibiting institutional-grade strength in the Construction sector. Price shifted 6.19% on 0.02x relative volume."
+    },
+    {
+      "ticker": "5340.KL",
+      "name": "GADANG",
+      "sector": "Construction",
+      "price": 6.53,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "analysis": "GADANG is exhibiting institutional-grade strength in the Construction sector. Price shifted 5.15% on 0.3x relative volume."
     },
     {
       "ticker": "5148.KL",
       "name": "IJM",
       "sector": "Construction",
-      "price": 0.57,
+      "price": 0.575,
       "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset IJM is showing robust technical strength in the Construction sector. Price shifted 3.64% on high relative volume (1.24x avg)."
-    },
-    {
-      "ticker": "0097.KL",
-      "name": "VITROX",
-      "sector": "Technology",
-      "price": 5.66,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset VITROX is showing robust technical strength in the Technology sector. Price shifted 2.54% on high relative volume (1.18x avg)."
-    },
-    {
-      "ticker": "5248.KL",
-      "name": "MRDIY",
-      "sector": "Consumer",
-      "price": 0.935,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset MRDIY is showing robust technical strength in the Consumer sector. Price shifted -2.6% on high relative volume (0.63x avg)."
-    },
-    {
-      "ticker": "0128.KL",
-      "name": "FRONTKN",
-      "sector": "Technology",
-      "price": 4.43,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset FRONTKN is showing robust technical strength in the Technology sector. Price shifted 2.55% on high relative volume (0.52x avg)."
-    },
-    {
-      "ticker": "7277.KL",
-      "name": "DIALOG",
-      "sector": "Energy",
-      "price": 2.29,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset DIALOG is showing robust technical strength in the Energy sector. Price shifted 2.69% on high relative volume (0.18x avg)."
+      "strategy": "ACCUMULATE",
+      "analysis": "IJM is exhibiting institutional-grade strength in the Construction sector. Price shifted 4.55% on 1.48x relative volume."
     },
     {
       "ticker": "5210.KL",
       "name": "ARMADA",
       "sector": "Energy",
-      "price": 0.4,
+      "price": 0.395,
       "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset ARMADA is showing robust technical strength in the Energy sector. Price shifted -2.44% on high relative volume (0.19x avg)."
+      "strategy": "ACCUMULATE",
+      "analysis": "ARMADA is exhibiting institutional-grade strength in the Energy sector. Price shifted -3.66% on 0.37x relative volume."
     },
     {
-      "ticker": "8877.KL",
-      "name": "EKOVEST",
-      "sector": "Construction",
-      "price": 0.23,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset EKOVEST is showing robust technical strength in the Construction sector. Price shifted -2.13% on high relative volume (0.32x avg)."
-    },
-    {
-      "ticker": "8583.KL",
-      "name": "MAHSING",
-      "sector": "Property",
-      "price": 1.07,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset MAHSING is showing robust technical strength in the Property sector. Price shifted 1.9% on high relative volume (0.53x avg)."
-    },
-    {
-      "ticker": "5183.KL",
-      "name": "PCHEM",
-      "sector": "Energy",
-      "price": 5.61,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset PCHEM is showing robust technical strength in the Energy sector. Price shifted 2.0% on high relative volume (0.16x avg)."
-    },
-    {
-      "ticker": "7153.KL",
-      "name": "KOSSAN",
-      "sector": "Healthcare",
-      "price": 1.09,
-      "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset KOSSAN is showing robust technical strength in the Healthcare sector. Price shifted -1.8% on high relative volume (0.37x avg)."
-    },
-    {
-      "ticker": "0138.KL",
-      "name": "MYEG",
+      "ticker": "0023.KL",
+      "name": "IFCA",
       "sector": "Technology",
-      "price": 0.875,
+      "price": 0.215,
+      "confidence": 8,
+      "strategy": "BULLISH BREAKOUT",
+      "analysis": "IFCA is exhibiting institutional-grade strength in the Technology sector. Price shifted 2.38% on 2.03x relative volume."
+    },
+    {
+      "ticker": "7277.KL",
+      "name": "DIALOG",
+      "sector": "Energy",
+      "price": 2.3,
       "confidence": 7,
-      "strategy": "ACCUMULATE ON DIPS",
-      "analysis": "The asset MYEG is showing robust technical strength in the Technology sector. Price shifted 1.74% on high relative volume (0.3x avg)."
+      "strategy": "ACCUMULATE",
+      "analysis": "DIALOG is exhibiting institutional-grade strength in the Energy sector. Price shifted 3.14% on 0.35x relative volume."
+    },
+    {
+      "ticker": "5250.KL",
+      "name": "7ELEVEN",
+      "sector": "Consumer",
+      "price": 2.0,
+      "confidence": 7,
+      "strategy": "ACCUMULATE",
+      "analysis": "7ELEVEN is exhibiting institutional-grade strength in the Consumer sector. Price shifted 1.01% on 3.61x relative volume."
     }
   ]
 }
