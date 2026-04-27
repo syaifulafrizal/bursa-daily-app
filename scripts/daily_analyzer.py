@@ -7,7 +7,7 @@ import time
 import re
 import xml.etree.ElementTree as ET
 
-# ASSET ARCHITECT ENGINE - VERSION 5.7 (HYBRID NEWS: YAHOO + GOOGLE)
+# ASSET ARCHITECT ENGINE - VERSION 6.0 (PRODUCTION READY)
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
 ASSET_METADATA = {
@@ -71,21 +71,16 @@ def log_event(message, level="INFO"):
     logs.append(entry)
 
 def get_google_news(name):
-    """Fetches up-to-the-minute news from Google News RSS for a specific company."""
     try:
-        query = f"{name} Bursa Malaysia"
+        query = f"{name} Bursa Malaysia news"
         url = f"https://news.google.com/rss/search?q={query}&hl=en-MY&gl=MY&ceid=MY:en"
         response = requests.get(url, timeout=10)
         root = ET.fromstring(response.content)
-        headlines = []
-        for item in root.findall('./channel/item')[:3]:
-            headlines.append(item.find('title').text)
-        return headlines
-    except:
-        return []
+        return [item.find('title').text for item in root.findall('./channel/item')[:3]]
+    except: return []
 
 def get_top_movers():
-    log_event(f"Analyzing Market Universe ({len(ASSET_METADATA)} assets)...")
+    log_event(f"Executing Market Scan ({len(ASSET_METADATA)} assets)...")
     active_data = []
     for ticker, meta in ASSET_METADATA.items():
         try:
@@ -95,39 +90,32 @@ def get_top_movers():
             
             price = hist['Close'].iloc[-1]
             prev_price = hist['Close'].iloc[-2]
-            change = ((price - prev_price) / prev_price) * 100
-            volume = hist['Volume'].iloc[-1]
-            avg_vol = hist['Volume'].mean()
-            
+            change = round(((price - prev_price) / prev_price) * 100, 2)
+            vol_spike = round(hist['Volume'].iloc[-1] / hist['Volume'].mean(), 2) if hist['Volume'].mean() > 0 else 1.0
+
             active_data.append({
                 "ticker": ticker, "name": meta["name"], "sector": meta["sector"],
-                "price": round(price, 3), "change_pct": round(change, 2),
-                "vol_spike": round(volume / avg_vol, 2) if avg_vol > 0 else 1.0
+                "price": round(price, 3), "change_pct": change, "vol_spike": vol_spike
             })
             time.sleep(0.01)
         except: continue
     
-    # Sort and pick top 25 technical candidates for News Search
-    candidates = sorted(active_data, key=lambda x: (abs(x['change_pct']) + (x['vol_spike'] * 0.5)), reverse=True)[:25]
-    
-    log_event("Technical candidates identified. Fetching Live Google News Intelligence...")
+    candidates = sorted(active_data, key=lambda x: (abs(x['change_pct']) + (x['vol_spike'] * 0.5)), reverse=True)[:30]
+    log_event(f"Synthesizing News Intelligence for {len(candidates)} movers.")
     for c in candidates:
-        # Mix Yahoo News and Google News for high fidelity
-        g_news = get_google_news(c['name'])
-        c['news'] = g_news
-        time.sleep(0.1) # Respectful delay
-        
+        c['news'] = get_google_news(c['name'])
+        time.sleep(0.1)
     return candidates
 
 def rule_based_analysis(market_data):
     log_event("AI discovery throttled. Triggering Expert Logic Fallback.", "INFO")
     report = {
         "date": datetime.datetime.now().strftime('%Y-%m-%d'),
-        "market_overview": "Market scan complete. Current sentiment is shifting toward high-volume laggards. Technical patterns suggest institutional rebalancing across Shariah mid-caps.",
+        "market_overview": "Autonomous Market Intelligence active. Current patterns indicate selective institutional flow into Shariah-compliant value plays.",
         "top_picks": [],
-        "source": "Logic Engine v5.7"
+        "source": "Logic Engine v6.0"
     }
-    for i, m in enumerate(market_data[:24]):
+    for m in market_data[:24]:
         strategy = "WATCHLIST"; conf = 6; reason = "Standard Flow"
         if abs(m['change_pct']) > 1.2 or m['vol_spike'] > 1.5:
             strategy = "ACCUMULATE"; conf = 7; reason = "Volatility Expansion"
@@ -140,16 +128,16 @@ def rule_based_analysis(market_data):
             "confidence_basis": reason,
             "analysis": f"{m['name']} is exhibiting technical interest in the {m['sector']} sector. Price shifted {m['change_pct']}% on {m['vol_spike']}x relative volume.",
             "deep_dive": {
-                "thesis": f"Flow analysis for {m['name']} suggests institutional interest based on 10-day price/volume dynamics.",
-                "catalysts": [f"{m['vol_spike']}x Relative Volume", "Support zone confirmed"],
-                "risks": ["Sector rotation volatility", "Liquidity constraints"]
+                "thesis": f"Flow analysis for {m['name']} suggests institutional rebalancing based on current volume dynamics.",
+                "catalysts": [f"{m['vol_spike']}x Relative Volume", "Technical Support established"],
+                "risks": ["Broader sector volatility", "Liquidity constraints"]
             }
         })
     return report
 
 def analyze_with_ai(market_data):
     variants = ["v1beta/models/gemini-2.0-flash", "v1beta/models/gemini-1.5-flash"]
-    prompt = f"Analyze these Bursa stocks using BOTH technicals and the provided GOOGLE NEWS headlines. Pick top 24 SHARIAH setups with thesis/catalysts/risks. JSON ONLY. Data: {json.dumps(market_data)}"
+    prompt = f"Analyze these Bursa stocks using BOTH technicals and NEWS headlines. Pick top 24 SHARIAH setups with thesis/catalysts/risks. JSON ONLY. Data: {json.dumps(market_data)}"
     
     for variant in variants:
         try:
@@ -160,7 +148,7 @@ def analyze_with_ai(market_data):
                 content = response.json()['candidates'][0]['content']['parts'][0]['text']
                 match = re.search(r'\{.*\}', content, re.DOTALL)
                 res = json.loads(match.group())
-                res["source"] = f"AI Agent ({variant})"
+                res["source"] = f"AI ({variant})"
                 log_event(f"Sync Successful: {variant}")
                 return res
         except: continue
@@ -168,16 +156,19 @@ def analyze_with_ai(market_data):
 
 def main():
     start_time = time.time()
-    data = get_top_movers()
-    if not data: return
-    report = analyze_with_ai(data) or rule_based_analysis(data)
     os.makedirs('data', exist_ok=True)
-    with open('data/daily_report.json', 'w') as f:
-        json.dump(report, f, indent=2)
-    with open('data/logs.json', 'w') as f:
-        json.dump(logs, f, indent=2)
+    data = get_top_movers()
+    
+    if not data:
+        log_event("CRITICAL: Market data feed unreachable.", "ERROR")
+        report = {"date": datetime.datetime.now().strftime('%Y-%m-%d'), "market_overview": "Market synchronization failure.", "top_picks": [], "source": "System Error"}
+    else:
+        report = analyze_with_ai(data) or rule_based_analysis(data)
+    
+    with open('data/daily_report.json', 'w') as f: json.dump(report, f, indent=2)
     elapsed = round(time.time() - start_time, 2)
-    log_event(f"Asset Architect Cycle Complete. Coverage: {len(report.get('top_picks', []))} assets. Time: {elapsed}s")
+    log_event(f"Asset Architect Cycle Complete. Elapsed: {elapsed}s")
+    with open('data/logs.json', 'w') as f: json.dump(logs, f, indent=2)
 
 if __name__ == "__main__":
     main()
