@@ -13,11 +13,11 @@
       "confidence": 9,
       "confidence_basis": "Breakout Momentum",
       "strategy": "BUY ON BREAKOUT",
-      "analysis": "Inari has surged 13.19% on 2.77x relative volume, crushing the RM1.80 barrier. News of the Lumileds termination is seen as a strategic positive for future margins.",
+      "analysis": "Inari has violently cleared the RM1.80 psychological barrier. The termination of the Lumileds joint acquisition removes a significant earnings overhang, allowing a focused return to core RF and fiber optics excellence.",
       "deep_dive": {
-        "thesis": "Re-rating event. Removing the Lumileds earnings overhang allows the market to value Inari based on its core RF chip strength.",
-        "catalysts": ["RM1.80 Resistance Breach", "Lumileds deal termination", "Strong institutional flow"],
-        "risks": ["Immediate profit taking", "Global tech slowdown"]
+        "thesis": "Strategic de-risking is the primary driver here. By abandoning the Lumileds deal, Inari preserves its cash pile and avoids a margin-dilutive integration, triggering institutional re-entry.",
+        "catalysts": ["RM1.80 multi-month resistance breach", "Lumileds deal termination", "Spike in RF demand for 2026 AI cycles"],
+        "risks": ["Immediate profit taking at RM2.15 zone", "Global tech volatility"]
       }
     },
     {
@@ -30,11 +30,11 @@
       "confidence": 8,
       "confidence_basis": "DC Catalyst",
       "strategy": "ACCUMULATE",
-      "analysis": "Secured RM658m Hyperscale Data Centre contract. Order book hits RM9.1b with 43% focus on digital infrastructure.",
+      "analysis": "IJM has secured a massive RM658m Hyperscale Data Centre contract from Sime Darby Property. This cements their position as the leading 'digital infra' builder in the region.",
       "deep_dive": {
-        "thesis": "Premier proxy for the Data Centre boom. Sunway offer rejection at RM3.15 confirms internal valuation is much higher.",
-        "catalysts": ["RM658m DC contract win", "RM9.1b order book visibility", "Sunway offer rejection"],
-        "risks": ["Material cost inflation", "Infrastructure budget delays"]
+        "thesis": "Construction firms with data centre expertise are commanding higher multiples. IJM's rejection of the Sunway takeover confirms that internal value is significantly higher than current market cap.",
+        "catalysts": ["RM658m DC contract win", "RM9.1b total order book", "Rejection of RM3.15 takeover bid"],
+        "risks": ["Margin pressure from raw material inflation", "Project execution delays in Elmina"]
       }
     },
     {
@@ -47,11 +47,11 @@
       "confidence": 7,
       "confidence_basis": "Cash Flow Recovery",
       "strategy": "WATCHLIST",
-      "analysis": "Bottom-reversal pattern detected. Project handovers (LRT3) expected to improve balance sheet liquidity in mid-2026.",
+      "analysis": "Gabungan AQRS is moving on project handover expectations. As LRT3 nears completion, the release of retention sums will drive a significant improvement in the group's net cash position.",
       "deep_dive": {
-        "thesis": "Laggard value play. Completion of legacy high-risk infrastructure projects reduces overall risk profile.",
-        "catalysts": ["LRT3 completion phase", "Retention sum release", "Low P/B valuation"],
-        "risks": ["Small cap volatility", "Contract replenishment timing"]
+        "thesis": "Classic laggard play trading at a steep discount to NTA. The market is beginning to price in the completion of high-risk legacy jobs.",
+        "catalysts": ["LRT3 completion milestones", "Improved cash flow from project handovers", "Institutional re-entry in laggard construction"],
+        "risks": ["Small cap liquidity risk", "Continued dependence on contract replenishment"]
       }
     },
     {
@@ -64,11 +64,11 @@
       "confidence": 7,
       "confidence_basis": "Industrial Flow",
       "strategy": "ACCUMULATE",
-      "analysis": "Benefiting from Inari rally spillover. Technicals show steady accumulation on healthy 1.6x volume.",
+      "analysis": "Benefiting from the spillover interest in Inari. Technicals show a steady +2.08% climb on healthy 1.6x volume.",
       "deep_dive": {
-        "thesis": "Foundry service play. Higher utilization in Taiwan and Singapore chips factories is driving recurring cleaning revenue.",
-        "catalysts": ["Taiwan node expansions", "Foundry utilization >85%", "Semi-conductor upcycle"],
-        "risks": ["Currency volatility", "Global supply chain hitches"]
+        "thesis": "Frontken provides precision cleaning services for the chip industry and is a lower-beta way to play the semi-conductor recovery.",
+        "catalysts": ["Increased foundry utilization rates", "Expansion in Singapore and Taiwan nodes", "Correlated Tech sector rally"],
+        "risks": ["Sensitivity to global wafer shipment volumes", "Taiwan geopolitical tensions"]
       }
     },
     {
@@ -79,13 +79,30 @@
       "change_pct": 3.52,
       "vol_spike": 1.19,
       "confidence": 7,
-      "confidence_basis": "Support Bounce",
+      "confidence_basis": "Defensive Rebound",
       "strategy": "WATCHLIST",
-      "analysis": "Defending support levels. Sticky retail demand for grocery staples remains the primary defensive buffer.",
+      "analysis": "99 Speedmart is defending its support zone. Despite consumer sector headwinds, its high-frequency mini-mart model remains the most resilient retail setup on Bursa.",
       "deep_dive": {
-        "thesis": "Recession-proof retail. Store network expansion to 3,000 units provides a clear growth roadmap through 2027.",
-        "catalysts": ["SSSG resilience", "Network expansion (3k stores)", "Index inclusion potential"],
-        "risks": ["Rising labor costs", "Sector rotation out of defensive"]
+        "thesis": "Recession-proof growth. The 3,000-store expansion target remains on track, providing high earnings visibility through 2027.",
+        "catalysts": ["Strong domestic consumption sticky-ness", "Index inclusion prospects", "Store network expansion momentum"],
+        "risks": ["Rising operational costs (minimum wage)", "Competition from other retail chains"]
+      }
+    },
+    {
+      "ticker": "0097.KL",
+      "name": "VITROX",
+      "sector": "Technology",
+      "price": 5.61,
+      "change_pct": 1.63,
+      "vol_spike": 2.46,
+      "confidence": 6,
+      "confidence_basis": "ATE Accumulation",
+      "strategy": "WATCHLIST",
+      "analysis": "Institutions are rebalancing into high-quality test equipment makers. ViTrox's move into AI-integrated inspection is a long-term thematic winner.",
+      "deep_dive": {
+        "thesis": "Quality compounder. While not as explosive as Inari, ViTrox offers lower volatility and exposure to the global ATE recovery.",
+        "catalysts": ["AI-inspection system rollouts", "Institutional rebalancing", "Global ATE demand recovery"],
+        "risks": ["High P/E valuation sensitive to rate hikes", "Non-AI chip segment weakness"]
       }
     }
   ]
