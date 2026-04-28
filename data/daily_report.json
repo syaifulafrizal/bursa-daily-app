@@ -1,23 +1,23 @@
 {
-  "date": "2026-04-27",
-  "market_overview": "High-velocity rotation is currently dominating the Shariah universe. Semiconductor giants are undergoing massive re-ratings following strategic de-risking, while the Data Centre thematic continues to fuel multibillion-ringgit order book expansions in the construction sector.",
-  "source": "Manual Agent Synthesis (Architect 6.5)",
+  "date": "2026-04-29",
+  "market_overview": "Market sentiment is stabilizing following a high-velocity tech rally. Sector rotation is now favoring established infrastructure proxies and high-utilization energy service providers, with a specific focus on Data Centre execution and recurring revenue models.",
+  "source": "Manual Agent Synthesis (Blueprint 6.5)",
   "top_picks": [
     {
       "ticker": "0166.KL",
       "name": "INARI",
       "sector": "Technology",
       "price": 2.06,
-      "change_pct": 13.19,
-      "vol_spike": 2.77,
-      "confidence": 9,
-      "confidence_basis": "Breakout Momentum",
-      "strategy": "BUY ON BREAKOUT",
-      "analysis": "Inari has violently cleared the RM1.80 psychological barrier. The termination of the Lumileds joint acquisition removes a significant earnings overhang, allowing a focused return to core RF and fiber optics excellence.",
+      "change_pct": 0.00,
+      "vol_spike": 1.05,
+      "confidence": 8,
+      "confidence_basis": "Breakout Consolidation",
+      "strategy": "ACCUMULATE",
+      "analysis": "Inari is consolidating healthily after its RM1.80 breakout. The removal of the Lumileds deal overhang continues to act as a long-term valuation tailwind for the RF segment.",
       "deep_dive": {
-        "thesis": "Strategic de-risking is the primary driver here. By abandoning the Lumileds deal, Inari preserves its cash pile and avoids a margin-dilutive integration, triggering institutional re-entry.",
-        "catalysts": ["RM1.80 multi-month resistance breach", "Lumileds deal termination", "Spike in RF demand for 2026 AI cycles"],
-        "risks": ["Immediate profit taking at RM2.15 zone", "Global tech volatility"]
+        "thesis": "Re-rating consolidation phase. The market is absorbing recent gains, establishing a new floor above RM 2.00 as institutions re-weight their tech portfolios for 2Q2026.",
+        "catalysts": ["Support at RM 2.00 confirmed", "RF chip volume recovery", "Strong net cash position"],
+        "risks": ["Global NASDAQ volatility", "Short-term technical profit taking"]
       }
     },
     {
@@ -25,84 +25,50 @@
       "name": "IJM",
       "sector": "Construction",
       "price": 0.59,
-      "change_pct": 7.27,
-      "vol_spike": 2.54,
+      "change_pct": 0.00,
+      "vol_spike": 1.42,
       "confidence": 8,
-      "confidence_basis": "DC Catalyst",
+      "confidence_basis": "DC Momentum",
       "strategy": "ACCUMULATE",
-      "analysis": "IJM has secured a massive RM658m Hyperscale Data Centre contract from Sime Darby Property. This cements their position as the leading 'digital infra' builder in the region.",
+      "analysis": "Building momentum following the RM658m hyperscale DC contract. The pivot to digital infrastructure is driving a multi-year order book expansion.",
       "deep_dive": {
-        "thesis": "Construction firms with data centre expertise are commanding higher multiples. IJM's rejection of the Sunway takeover confirms that internal value is significantly higher than current market cap.",
-        "catalysts": ["RM658m DC contract win", "RM9.1b total order book", "Rejection of RM3.15 takeover bid"],
-        "risks": ["Margin pressure from raw material inflation", "Project execution delays in Elmina"]
+        "thesis": "Data Centre infrastructure is the dominant theme. IJM's expertise in specialized DC construction provides a higher margin profile than traditional civil works.",
+        "catalysts": ["DC contract execution beginning", "RM 9.1b order book backlog", "Potential for special dividends from asset disposals"],
+        "risks": ["Construction material cost spikes", "Project execution timelines"]
       }
     },
     {
-      "ticker": "5226.KL",
-      "name": "GBGAQRS",
-      "sector": "Construction",
-      "price": 0.17,
-      "change_pct": 6.25,
-      "vol_spike": 2.2,
-      "confidence": 7,
-      "confidence_basis": "Cash Flow Recovery",
-      "strategy": "WATCHLIST",
-      "analysis": "Gabungan AQRS is moving on project handover expectations. As LRT3 nears completion, the release of retention sums will drive a significant improvement in the group's net cash position.",
+      "ticker": "5243.KL",
+      "name": "VELESTO",
+      "sector": "Energy",
+      "price": 0.355,
+      "change_pct": 0.00,
+      "vol_spike": 0.98,
+      "confidence": 8,
+      "confidence_basis": "Dividend Yield",
+      "strategy": "BUY ON DIPS",
+      "analysis": "Top penny stock pick. Anticipation of a special dividend from the Naga 3 sale and high rig utilization (>85%) provides a strong fundamental floor.",
       "deep_dive": {
-        "thesis": "Classic laggard play trading at a steep discount to NTA. The market is beginning to price in the completion of high-risk legacy jobs.",
-        "catalysts": ["LRT3 completion milestones", "Improved cash flow from project handovers", "Institutional re-entry in laggard construction"],
-        "risks": ["Small cap liquidity risk", "Continued dependence on contract replenishment"]
+        "thesis": "Cash flow generation play. Velesto has transitioned into a lean, profitable operator with clear line of sight on 2026 earnings from Petronas contracts.",
+        "catalysts": ["Special dividend announcement potential", "Full fleet utilization", "Debt reduction progress"],
+        "risks": ["Brent crude price volatility", "Rig maintenance downtime"]
       }
     },
     {
-      "ticker": "0128.KL",
-      "name": "FRONTKN",
+      "ticker": "5309.KL",
+      "name": "ITMAX",
       "sector": "Technology",
-      "price": 4.41,
-      "change_pct": 2.08,
-      "vol_spike": 1.62,
+      "price": 3.85,
+      "change_pct": 0.00,
+      "vol_spike": 1.12,
       "confidence": 7,
-      "confidence_basis": "Industrial Flow",
-      "strategy": "ACCUMULATE",
-      "analysis": "Benefiting from the spillover interest in Inari. Technicals show a steady +2.08% climb on healthy 1.6x volume.",
-      "deep_dive": {
-        "thesis": "Frontken provides precision cleaning services for the chip industry and is a lower-beta way to play the semi-conductor recovery.",
-        "catalysts": ["Increased foundry utilization rates", "Expansion in Singapore and Taiwan nodes", "Correlated Tech sector rally"],
-        "risks": ["Sensitivity to global wafer shipment volumes", "Taiwan geopolitical tensions"]
-      }
-    },
-    {
-      "ticker": "5301.KL",
-      "name": "99SMART",
-      "sector": "Consumer",
-      "price": 0.735,
-      "change_pct": 3.52,
-      "vol_spike": 1.19,
-      "confidence": 7,
-      "confidence_basis": "Defensive Rebound",
+      "confidence_basis": "Recurring Revenue",
       "strategy": "WATCHLIST",
-      "analysis": "99 Speedmart is defending its support zone. Despite consumer sector headwinds, its high-frequency mini-mart model remains the most resilient retail setup on Bursa.",
+      "analysis": "Smart City giant continues to execute on its Johor rollout. High-margin recurring income model makes it a premier defensive growth compounder.",
       "deep_dive": {
-        "thesis": "Recession-proof growth. The 3,000-store expansion target remains on track, providing high earnings visibility through 2027.",
-        "catalysts": ["Strong domestic consumption sticky-ness", "Index inclusion prospects", "Store network expansion momentum"],
-        "risks": ["Rising operational costs (minimum wage)", "Competition from other retail chains"]
-      }
-    },
-    {
-      "ticker": "0097.KL",
-      "name": "VITROX",
-      "sector": "Technology",
-      "price": 5.61,
-      "change_pct": 1.63,
-      "vol_spike": 2.46,
-      "confidence": 6,
-      "confidence_basis": "ATE Accumulation",
-      "strategy": "WATCHLIST",
-      "analysis": "Institutions are rebalancing into high-quality test equipment makers. ViTrox's move into AI-integrated inspection is a long-term thematic winner.",
-      "deep_dive": {
-        "thesis": "Quality compounder. While not as explosive as Inari, ViTrox offers lower volatility and exposure to the global ATE recovery.",
-        "catalysts": ["AI-inspection system rollouts", "Institutional rebalancing", "Global ATE demand recovery"],
-        "risks": ["High P/E valuation sensitive to rate hikes", "Non-AI chip segment weakness"]
+        "thesis": "Monopoly-like smart city contracts. As more local councils adopt AI-surveillance, ITMAX's proprietary software layer drives significant margin expansion.",
+        "catalysts": ["Greater JB smart city expansion", "DBKL phase 2 camera rollout", "Recurring revenue > 70%"],
+        "risks": ["Political budget changes in local councils", "Hardware supply chain inflation"]
       }
     }
   ]
