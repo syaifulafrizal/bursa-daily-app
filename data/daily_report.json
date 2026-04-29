@@ -1,74 +1,74 @@
 {
   "date": "2026-04-29",
-  "market_overview": "Market sentiment is stabilizing following a high-velocity tech rally. Sector rotation is now favoring established infrastructure proxies and high-utilization energy service providers, with a specific focus on Data Centre execution and recurring revenue models.",
-  "source": "Manual Agent Synthesis (Blueprint 6.5)",
+  "market_overview": "Sector rotation is shifting toward established infrastructure and energy service providers. While the tech sector is seeing a healthy technical pullback following recent surges, high-conviction players like IJM and Velesto are attracting fresh institutional accumulation.",
+  "source": "Manual Agent Synthesis (Architect 6.5)",
   "top_picks": [
-    {
-      "ticker": "0166.KL",
-      "name": "INARI",
-      "sector": "Technology",
-      "price": 2.06,
-      "change_pct": 0.00,
-      "vol_spike": 1.05,
-      "confidence": 8,
-      "confidence_basis": "Breakout Consolidation",
-      "strategy": "ACCUMULATE",
-      "analysis": "Inari is consolidating healthily after its RM1.80 breakout. The removal of the Lumileds deal overhang continues to act as a long-term valuation tailwind for the RF segment.",
-      "deep_dive": {
-        "thesis": "Re-rating consolidation phase. The market is absorbing recent gains, establishing a new floor above RM 2.00 as institutions re-weight their tech portfolios for 2Q2026.",
-        "catalysts": ["Support at RM 2.00 confirmed", "RF chip volume recovery", "Strong net cash position"],
-        "risks": ["Global NASDAQ volatility", "Short-term technical profit taking"]
-      }
-    },
     {
       "ticker": "5148.KL",
       "name": "IJM",
       "sector": "Construction",
-      "price": 0.59,
-      "change_pct": 0.00,
-      "vol_spike": 1.42,
-      "confidence": 8,
-      "confidence_basis": "DC Momentum",
+      "price": 0.665,
+      "change_pct": 2.20,
+      "vol_spike": 1.18,
+      "confidence": 9,
+      "confidence_basis": "Bullish Trend Continuation",
       "strategy": "ACCUMULATE",
-      "analysis": "Building momentum following the RM658m hyperscale DC contract. The pivot to digital infrastructure is driving a multi-year order book expansion.",
+      "analysis": "IJM has advanced +2.20% today, signaling strong continuation of its Data Centre thematic rally. Order book visibility and margin expansion remain the primary drivers.",
       "deep_dive": {
-        "thesis": "Data Centre infrastructure is the dominant theme. IJM's expertise in specialized DC construction provides a higher margin profile than traditional civil works.",
-        "catalysts": ["DC contract execution beginning", "RM 9.1b order book backlog", "Potential for special dividends from asset disposals"],
-        "risks": ["Construction material cost spikes", "Project execution timelines"]
+        "thesis": "High-conviction digital infrastructure play. IJM is successfully capturing the Capex cycle of global tech giants building in Malaysia.",
+        "catalysts": ["Price action above major moving averages", "RM658m DC contract mobilization", "Strong institutional net buy"],
+        "risks": ["Labor cost inflation", "Construction material supply chain hitches"]
       }
     },
     {
       "ticker": "5243.KL",
       "name": "VELESTO",
       "sector": "Energy",
-      "price": 0.355,
-      "change_pct": 0.00,
-      "vol_spike": 0.98,
+      "price": 0.325,
+      "change_pct": 1.56,
+      "vol_spike": 1.15,
       "confidence": 8,
-      "confidence_basis": "Dividend Yield",
+      "confidence_basis": "Dividend Accumulation",
       "strategy": "BUY ON DIPS",
-      "analysis": "Top penny stock pick. Anticipation of a special dividend from the Naga 3 sale and high rig utilization (>85%) provides a strong fundamental floor.",
+      "analysis": "Gaining +1.56% on steady volume. The market is pre-positioning for the Naga 3 disposal proceeds and the likely special dividend announcement.",
       "deep_dive": {
-        "thesis": "Cash flow generation play. Velesto has transitioned into a lean, profitable operator with clear line of sight on 2026 earnings from Petronas contracts.",
-        "catalysts": ["Special dividend announcement potential", "Full fleet utilization", "Debt reduction progress"],
-        "risks": ["Brent crude price volatility", "Rig maintenance downtime"]
+        "thesis": "Cash-rich recovery. Velesto's pivot from high debt to net cash position is driving a fundamental re-rating in the energy services space.",
+        "catalysts": ["Special dividend expectations", "High jack-up rig utilization (>85%)", "Petronas long-term contract floor"],
+        "risks": ["Brent crude price fluctuations", "Technical downtime for rig maintenance"]
+      }
+    },
+    {
+      "ticker": "0166.KL",
+      "name": "INARI",
+      "sector": "Technology",
+      "price": 2.05,
+      "change_pct": -2.84,
+      "vol_spike": 0.87,
+      "confidence": 8,
+      "confidence_basis": "Technical Pullback",
+      "strategy": "ACCUMULATE ON DIP",
+      "analysis": "Currently down -2.84% in a healthy profit-taking move. This is a classic 'test of support' following the major RM 1.80 breakout.",
+      "deep_dive": {
+        "thesis": "Buy the dip opportunity. The fundamental reason for the rally (Lumileds exit) remains intact; current weakness is purely technical consolidation.",
+        "catalysts": ["Support at RM 2.00 holding firm", "Long-term RF segment growth", "Strategic cash preservation"],
+        "risks": ["Extended global semiconductor consolidation", "RSI cooling period"]
       }
     },
     {
       "ticker": "5309.KL",
       "name": "ITMAX",
       "sector": "Technology",
-      "price": 3.85,
-      "change_pct": 0.00,
-      "vol_spike": 1.12,
+      "price": 4.81,
+      "change_pct": -0.41,
+      "vol_spike": 0.95,
       "confidence": 7,
-      "confidence_basis": "Recurring Revenue",
+      "confidence_basis": "Sideways Consolidation",
       "strategy": "WATCHLIST",
-      "analysis": "Smart City giant continues to execute on its Johor rollout. High-margin recurring income model makes it a premier defensive growth compounder.",
+      "analysis": "Consolidating near record highs. ITMAX remains a premium compounder with high margin visibility in the smart city surveillance segment.",
       "deep_dive": {
-        "thesis": "Monopoly-like smart city contracts. As more local councils adopt AI-surveillance, ITMAX's proprietary software layer drives significant margin expansion.",
-        "catalysts": ["Greater JB smart city expansion", "DBKL phase 2 camera rollout", "Recurring revenue > 70%"],
-        "risks": ["Political budget changes in local councils", "Hardware supply chain inflation"]
+        "thesis": "Growth compounder. ITMAX's proprietary AI software continues to drive recurring revenue from local council contracts in Johor and KL.",
+        "catalysts": ["Smart parking monetization", "Upcoming quarterly earnings beat potential", "Johor SEZ secondary boost"],
+        "risks": ["Premium valuation (P/E expansion limited)", "Local government budget cycles"]
       }
     }
   ]
