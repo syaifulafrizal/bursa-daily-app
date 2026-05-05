@@ -1,74 +1,91 @@
 {
-  "date": "2026-04-29",
-  "market_overview": "Sector rotation is shifting toward established infrastructure and energy service providers. While the tech sector is seeing a healthy technical pullback following recent surges, high-conviction players like IJM and Velesto are attracting fresh institutional accumulation.",
+  "date": "2026-05-05",
+  "market_overview": "Market sentiment is highly focused on a landmark AI Data Center collaboration between SNS Network and Gabungan AQRS. This 'Silicon Valley' thematic is driving capital into Technology and Infrastructure, offsetting profit-taking in the broader semiconductor segment.",
   "source": "Manual Agent Synthesis (Architect 6.5)",
   "top_picks": [
     {
-      "ticker": "5148.KL",
-      "name": "IJM",
-      "sector": "Construction",
-      "price": 0.665,
-      "change_pct": 2.20,
-      "vol_spike": 1.18,
+      "ticker": "0235.KL",
+      "name": "SNS",
+      "sector": "Technology",
+      "price": 0.360,
+      "change_pct": 4.35,
+      "vol_spike": 0.65,
       "confidence": 9,
-      "confidence_basis": "Bullish Trend Continuation",
+      "confidence_basis": "Strategic AI MoU",
       "strategy": "ACCUMULATE",
-      "analysis": "IJM has advanced +2.20% today, signaling strong continuation of its Data Centre thematic rally. Order book visibility and margin expansion remain the primary drivers.",
+      "analysis": "SNS has surged +4.35% following the signing of an MoU with GBGAQRS to develop an AI Data Center. Its role as the hardware provider for NVIDIA super-servers makes it a key beneficiary of the 'AI Factory' cycle.",
       "deep_dive": {
-        "thesis": "High-conviction digital infrastructure play. IJM is successfully capturing the Capex cycle of global tech giants building in Malaysia.",
-        "catalysts": ["Price action above major moving averages", "RM658m DC contract mobilization", "Strong institutional net buy"],
-        "risks": ["Labor cost inflation", "Construction material supply chain hitches"]
+        "thesis": "Transition to digital infrastructure. SNS is shifting from a hardware reseller to a GPU-as-a-Service (GPUaaS) provider, which commands significantly higher valuation multiples.",
+        "catalysts": ["AI Data Center MoU with GBGAQRS", "Official Main Market listing boost", "Partnership with NVIDIA/Dell for super-servers"],
+        "risks": ["High initial Capex for GPUaaS", "Project execution and land acquisition delays"]
       }
     },
     {
-      "ticker": "5243.KL",
-      "name": "VELESTO",
-      "sector": "Energy",
-      "price": 0.325,
-      "change_pct": 1.56,
-      "vol_spike": 1.15,
+      "ticker": "5226.KL",
+      "name": "GBGAQRS",
+      "sector": "Construction",
+      "price": 0.180,
+      "change_pct": 2.86,
+      "vol_spike": 0.50,
       "confidence": 8,
-      "confidence_basis": "Dividend Accumulation",
-      "strategy": "BUY ON DIPS",
-      "analysis": "Gaining +1.56% on steady volume. The market is pre-positioning for the Naga 3 disposal proceeds and the likely special dividend announcement.",
+      "confidence_basis": "Infra Partner Proxy",
+      "strategy": "BUY ON BREAKOUT",
+      "analysis": "GBGAQRS is moving in tandem with SNS (+2.86%). As the civil engineering partner for the new AI Data Center project, the company successfully diversifies its order book away from traditional highways.",
       "deep_dive": {
-        "thesis": "Cash-rich recovery. Velesto's pivot from high debt to net cash position is driving a fundamental re-rating in the energy services space.",
-        "catalysts": ["Special dividend expectations", "High jack-up rig utilization (>85%)", "Petronas long-term contract floor"],
-        "risks": ["Brent crude price fluctuations", "Technical downtime for rig maintenance"]
+        "thesis": "Infrastructure pivot. By partnering with SNS, AQRS enters the high-margin data center construction space, complementing its upcoming cash flow boost from LRT3 handover.",
+        "catalysts": ["AI Data Center infrastructure contract potential", "LRT3 final retention sum release", "Valuation discount to NTA"],
+        "risks": ["Small cap volatility", "Dependency on SNS's technical success"]
       }
     },
     {
       "ticker": "0166.KL",
       "name": "INARI",
       "sector": "Technology",
-      "price": 2.05,
-      "change_pct": -2.84,
-      "vol_spike": 0.87,
+      "price": 1.940,
+      "change_pct": -1.52,
+      "vol_spike": 0.18,
       "confidence": 8,
-      "confidence_basis": "Technical Pullback",
+      "confidence_basis": "Healthy Pullback",
       "strategy": "ACCUMULATE ON DIP",
-      "analysis": "Currently down -2.84% in a healthy profit-taking move. This is a classic 'test of support' following the major RM 1.80 breakout.",
+      "analysis": "Inari is undergoing a technical consolidation (-1.52%) following its recent rally. Long-term RF segment growth remains robust as the Lumileds termination clears the balance sheet path.",
       "deep_dive": {
-        "thesis": "Buy the dip opportunity. The fundamental reason for the rally (Lumileds exit) remains intact; current weakness is purely technical consolidation.",
-        "catalysts": ["Support at RM 2.00 holding firm", "Long-term RF segment growth", "Strategic cash preservation"],
-        "risks": ["Extended global semiconductor consolidation", "RSI cooling period"]
+        "thesis": "Strategic de-risking remains the core play. Current price levels offer a low-risk entry for institutions looking to increase tech exposure for 2H2026.",
+        "catalysts": ["Support at RM 1.90 holding", "Global smartphone recovery in 2026", "Cash preservation for dividend payout"],
+        "risks": ["NASDAQ tech rotation weakness", "Slower semi-conductor demand recovery"]
       }
     },
     {
-      "ticker": "5309.KL",
-      "name": "ITMAX",
-      "sector": "Technology",
-      "price": 4.81,
-      "change_pct": -0.41,
-      "vol_spike": 0.95,
-      "confidence": 7,
-      "confidence_basis": "Sideways Consolidation",
+      "ticker": "5398.KL",
+      "name": "GAMUDA",
+      "sector": "Construction",
+      "price": 4.380,
+      "change_pct": -1.13,
+      "vol_spike": 0.10,
+      "confidence": 8,
+      "confidence_basis": "Institutional Floor",
       "strategy": "WATCHLIST",
-      "analysis": "Consolidating near record highs. ITMAX remains a premium compounder with high margin visibility in the smart city surveillance segment.",
+      "analysis": "Gamuda is seeing minor profit-taking (-1.13%). Despite the dip, it remains the dominant large-cap construction proxy with a massive order book target of RM50b by end of 2026.",
       "deep_dive": {
-        "thesis": "Growth compounder. ITMAX's proprietary AI software continues to drive recurring revenue from local council contracts in Johor and KL.",
-        "catalysts": ["Smart parking monetization", "Upcoming quarterly earnings beat potential", "Johor SEZ secondary boost"],
-        "risks": ["Premium valuation (P/E expansion limited)", "Local government budget cycles"]
+        "thesis": "Regional engineering giant. Gamuda's success in Taiwan and Australia provides a hedge against domestic infrastructure delays.",
+        "catalysts": ["Potential MRT3 rollout news", "Data center contract wins in PD", "Vietnam property sales ramp-up"],
+        "risks": ["Rising global material costs", "Interest rate environment volatility"]
+      }
+    },
+    {
+      "ticker": "5347.KL",
+      "name": "TENAGA",
+      "sector": "Utilities",
+      "price": 14.740,
+      "change_pct": -0.41,
+      "vol_spike": 0.06,
+      "confidence": 9,
+      "confidence_basis": "Energy Bottleneck",
+      "strategy": "ACCUMULATE",
+      "analysis": "Stable utility play. TNB is the ultimate beneficiary of the SNS-AQRS data center news, as every new server farm requires massive grid connectivity and power off-take.",
+      "deep_dive": {
+        "thesis": "Grid infrastructure monopoly. TNB is no longer a utility; it is a digital transformation enabler with a 4% dividend yield floor.",
+        "catalysts": ["Regulatory Period 4 (RP4) returns", "DC power demand scaling to 7GW+", "National Energy Transition (NETR) progress"],
+        "risks": ["ICPT fuel cost pass-through changes", "Grid liberalization policy risks"]
       }
     }
   ]
