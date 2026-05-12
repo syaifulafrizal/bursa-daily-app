@@ -1,91 +1,270 @@
 {
-  "date": "2026-05-05",
-  "market_overview": "Market sentiment is highly focused on a landmark AI Data Center collaboration between SNS Network and Gabungan AQRS. This 'Silicon Valley' thematic is driving capital into Technology and Infrastructure, offsetting profit-taking in the broader semiconductor segment.",
-  "source": "Manual Agent Synthesis (Architect 6.5)",
+  "date": "2026-05-12",
+  "session": "Pre-close tactical refresh",
+  "source": "Manual Agent Synthesis (Architect 7.0)",
+  "market_overview": "Bursa Malaysia remains selective rather than broadly risk-on. The higher-quality opportunity set is concentrated in three connected themes: data-centre power demand, AI infrastructure build-out, and defensive cash-flow compounders. The tactical bias is to avoid chasing illiquid spikes and focus on names where catalysts are paired with balance-sheet resilience, visible order books, or regulated earnings.",
+  "breadth": {
+    "risk_tone": "Selective accumulation",
+    "leadership": ["Utilities", "Construction", "Technology infrastructure"],
+    "watch_zones": ["Small-cap liquidity", "Semiconductor earnings volatility", "Policy headlines around power tariffs"],
+    "base_case": "Accumulation favours names with real earnings translation from data-centre capex and grid expansion.",
+    "bear_case": "A fast rotation out of AI and construction proxies would pressure small caps first; keep position sizing tight below RM0.50 names.",
+    "bull_case": "Fresh data-centre awards, grid capex clarity, or foreign fund inflow could extend leadership in TNB, Gamuda, SNS and adjacent contractors."
+  },
+  "portfolio_stance": {
+    "cash": 25,
+    "core": 45,
+    "tactical": 20,
+    "watchlist": 10,
+    "summary": "Keep a core allocation in liquid leaders, reserve tactical risk for confirmed breakouts, and leave cash for pullbacks after headline-driven moves."
+  },
   "top_picks": [
     {
-      "ticker": "0235.KL",
-      "name": "SNS",
-      "sector": "Technology",
-      "price": 0.360,
-      "change_pct": 4.35,
-      "vol_spike": 0.65,
+      "ticker": "5347.KL",
+      "name": "TENAGA",
+      "sector": "Utilities",
+      "price": 14.74,
+      "change_pct": -0.41,
+      "vol_spike": 0.06,
       "confidence": 9,
-      "confidence_basis": "Strategic AI MoU",
-      "strategy": "ACCUMULATE",
-      "analysis": "SNS has surged +4.35% following the signing of an MoU with GBGAQRS to develop an AI Data Center. Its role as the hardware provider for NVIDIA super-servers makes it a key beneficiary of the 'AI Factory' cycle.",
+      "confidence_basis": "Regulated grid monopoly plus data-centre electricity demand",
+      "strategy": "CORE ACCUMULATE",
+      "timeframe": "6-18 months",
+      "setup_quality": "Institutional core",
+      "analysis": "TNB is the cleanest large-cap proxy for Malaysia's data-centre electricity requirement. The thesis is less about one project and more about recurring grid connection, transmission capex and regulated returns.",
+      "levels": {
+        "support": "RM14.20-RM14.50",
+        "trigger": "Sustained close above RM15.00",
+        "risk_line": "Weakness below RM13.80 changes the near-term structure"
+      },
+      "metrics": {
+        "liquidity": "High",
+        "earnings_visibility": "High",
+        "balance_sheet": "Regulated utility profile",
+        "valuation_view": "Premium defensible if RP4 returns and grid capex visibility hold"
+      },
       "deep_dive": {
-        "thesis": "Transition to digital infrastructure. SNS is shifting from a hardware reseller to a GPU-as-a-Service (GPUaaS) provider, which commands significantly higher valuation multiples.",
-        "catalysts": ["AI Data Center MoU with GBGAQRS", "Official Main Market listing boost", "Partnership with NVIDIA/Dell for super-servers"],
-        "risks": ["High initial Capex for GPUaaS", "Project execution and land acquisition delays"]
-      }
-    },
-    {
-      "ticker": "5226.KL",
-      "name": "GBGAQRS",
-      "sector": "Construction",
-      "price": 0.180,
-      "change_pct": 2.86,
-      "vol_spike": 0.50,
-      "confidence": 8,
-      "confidence_basis": "Infra Partner Proxy",
-      "strategy": "BUY ON BREAKOUT",
-      "analysis": "GBGAQRS is moving in tandem with SNS (+2.86%). As the civil engineering partner for the new AI Data Center project, the company successfully diversifies its order book away from traditional highways.",
-      "deep_dive": {
-        "thesis": "Infrastructure pivot. By partnering with SNS, AQRS enters the high-margin data center construction space, complementing its upcoming cash flow boost from LRT3 handover.",
-        "catalysts": ["AI Data Center infrastructure contract potential", "LRT3 final retention sum release", "Valuation discount to NTA"],
-        "risks": ["Small cap volatility", "Dependency on SNS's technical success"]
-      }
-    },
-    {
-      "ticker": "0166.KL",
-      "name": "INARI",
-      "sector": "Technology",
-      "price": 1.940,
-      "change_pct": -1.52,
-      "vol_spike": 0.18,
-      "confidence": 8,
-      "confidence_basis": "Healthy Pullback",
-      "strategy": "ACCUMULATE ON DIP",
-      "analysis": "Inari is undergoing a technical consolidation (-1.52%) following its recent rally. Long-term RF segment growth remains robust as the Lumileds termination clears the balance sheet path.",
-      "deep_dive": {
-        "thesis": "Strategic de-risking remains the core play. Current price levels offer a low-risk entry for institutions looking to increase tech exposure for 2H2026.",
-        "catalysts": ["Support at RM 1.90 holding", "Global smartphone recovery in 2026", "Cash preservation for dividend payout"],
-        "risks": ["NASDAQ tech rotation weakness", "Slower semi-conductor demand recovery"]
+        "thesis": "TNB is evolving from a conventional utility into the grid backbone for Malaysia's digital infrastructure. Data-centre growth creates a multi-year need for generation adequacy, transmission upgrades and connection reliability.",
+        "catalysts": ["Regulatory Period 4 return clarity", "Data-centre power reservation and connection demand", "National Energy Transition Roadmap grid investment"],
+        "risks": ["Fuel-cost pass-through policy changes", "Political pressure on electricity tariffs", "Capex timing may lag market expectations"],
+        "what_to_watch": ["RP4 language on allowed returns", "New data-centre connection announcements", "Quarterly operating cash-flow trend"]
       }
     },
     {
       "ticker": "5398.KL",
       "name": "GAMUDA",
       "sector": "Construction",
-      "price": 4.380,
+      "price": 4.38,
       "change_pct": -1.13,
-      "vol_spike": 0.10,
+      "vol_spike": 0.1,
       "confidence": 8,
-      "confidence_basis": "Institutional Floor",
-      "strategy": "WATCHLIST",
-      "analysis": "Gamuda is seeing minor profit-taking (-1.13%). Despite the dip, it remains the dominant large-cap construction proxy with a massive order book target of RM50b by end of 2026.",
+      "confidence_basis": "Order-book depth and regional execution record",
+      "strategy": "ACCUMULATE ON WEAKNESS",
+      "timeframe": "6-12 months",
+      "setup_quality": "Liquid infrastructure leader",
+      "analysis": "Gamuda remains the highest-quality construction exposure because earnings are supported by a broad order book, overseas execution and potential domestic infrastructure optionality.",
+      "levels": {
+        "support": "RM4.20-RM4.35",
+        "trigger": "Reclaim RM4.55 with volume",
+        "risk_line": "Break below RM4.05 implies deeper consolidation"
+      },
+      "metrics": {
+        "liquidity": "High",
+        "earnings_visibility": "High",
+        "balance_sheet": "Large-cap contractor with diversified projects",
+        "valuation_view": "Quality premium supported by execution and overseas mix"
+      },
       "deep_dive": {
-        "thesis": "Regional engineering giant. Gamuda's success in Taiwan and Australia provides a hedge against domestic infrastructure delays.",
-        "catalysts": ["Potential MRT3 rollout news", "Data center contract wins in PD", "Vietnam property sales ramp-up"],
-        "risks": ["Rising global material costs", "Interest rate environment volatility"]
+        "thesis": "Gamuda is a core infrastructure compounder rather than a pure headline trade. Its regional engineering book cushions delays in local mega-project awards while data-centre and transport infrastructure provide upside optionality.",
+        "catalysts": ["Domestic rail and transport project flow", "Data-centre civil works opportunities", "Australia and Taiwan project milestones"],
+        "risks": ["Material-cost inflation", "Project timing slippage", "Foreign-exchange and overseas execution risk"],
+        "what_to_watch": ["Order-book replenishment", "Margin preservation", "Management commentary on tender pipeline"]
       }
     },
     {
-      "ticker": "5347.KL",
-      "name": "TENAGA",
-      "sector": "Utilities",
-      "price": 14.740,
-      "change_pct": -0.41,
-      "vol_spike": 0.06,
-      "confidence": 9,
-      "confidence_basis": "Energy Bottleneck",
-      "strategy": "ACCUMULATE",
-      "analysis": "Stable utility play. TNB is the ultimate beneficiary of the SNS-AQRS data center news, as every new server farm requires massive grid connectivity and power off-take.",
+      "ticker": "0235.KL",
+      "name": "SNS",
+      "sector": "Technology",
+      "price": 0.36,
+      "change_pct": 4.35,
+      "vol_spike": 0.65,
+      "confidence": 8,
+      "confidence_basis": "AI infrastructure optionality with small-cap volatility",
+      "strategy": "TACTICAL ACCUMULATE",
+      "timeframe": "3-9 months",
+      "setup_quality": "High-beta thematic",
+      "analysis": "SNS offers direct thematic exposure to enterprise hardware, AI servers and GPU-related services. The opportunity is meaningful, but position sizing should reflect small-cap liquidity and execution risk.",
+      "levels": {
+        "support": "RM0.325-RM0.345",
+        "trigger": "Close above RM0.385 on rising volume",
+        "risk_line": "Below RM0.315 invalidates the breakout structure"
+      },
+      "metrics": {
+        "liquidity": "Medium",
+        "earnings_visibility": "Medium",
+        "balance_sheet": "Growth profile; monitor working capital",
+        "valuation_view": "Optionality-led valuation; needs contract conversion"
+      },
       "deep_dive": {
-        "thesis": "Grid infrastructure monopoly. TNB is no longer a utility; it is a digital transformation enabler with a 4% dividend yield floor.",
-        "catalysts": ["Regulatory Period 4 (RP4) returns", "DC power demand scaling to 7GW+", "National Energy Transition (NETR) progress"],
-        "risks": ["ICPT fuel cost pass-through changes", "Grid liberalization policy risks"]
+        "thesis": "The market is beginning to price SNS as an AI infrastructure participant instead of a pure reseller. Upside depends on converting partnerships and MoUs into recurring server, cloud or GPUaaS economics.",
+        "catalysts": ["AI data-centre collaboration headlines", "Enterprise server demand", "NVIDIA and Dell ecosystem exposure"],
+        "risks": ["MoU does not translate into material revenue", "Hardware margin compression", "Funding needs for GPUaaS expansion"],
+        "what_to_watch": ["Signed contracts versus announcements", "Gross-margin trend", "Receivables and inventory build"]
+      }
+    },
+    {
+      "ticker": "5226.KL",
+      "name": "GBGAQRS",
+      "sector": "Construction",
+      "price": 0.18,
+      "change_pct": 2.86,
+      "vol_spike": 0.5,
+      "confidence": 7,
+      "confidence_basis": "Data-centre infrastructure proxy but liquidity constrained",
+      "strategy": "BUY ONLY ON CONFIRMATION",
+      "timeframe": "1-6 months",
+      "setup_quality": "Speculative contractor proxy",
+      "analysis": "GBGAQRS gives leveraged exposure to the data-centre construction theme. The asymmetry is attractive only if volume confirms institutional participation and project scope becomes more concrete.",
+      "levels": {
+        "support": "RM0.160-RM0.170",
+        "trigger": "Break above RM0.195 with follow-through",
+        "risk_line": "Below RM0.155 removes the tactical setup"
+      },
+      "metrics": {
+        "liquidity": "Low to medium",
+        "earnings_visibility": "Medium-low",
+        "balance_sheet": "Small-cap contractor; monitor cash conversion",
+        "valuation_view": "Discount can close only with visible awards"
+      },
+      "deep_dive": {
+        "thesis": "AQRS is a higher-risk way to express the same AI infrastructure theme. It needs project conversion and clean execution to move from narrative discount to earnings-backed rerating.",
+        "catalysts": ["Data-centre civil works scope", "LRT3 cash-flow release", "New order-book replenishment"],
+        "risks": ["Thin liquidity exaggerates drawdowns", "Dependence on partner execution", "Delayed award timing"],
+        "what_to_watch": ["Volume above 20-day average", "Formal contract announcements", "Net debt and operating cash flow"]
+      }
+    },
+    {
+      "ticker": "0166.KL",
+      "name": "INARI",
+      "sector": "Technology",
+      "price": 1.94,
+      "change_pct": -1.52,
+      "vol_spike": 0.18,
+      "confidence": 7,
+      "confidence_basis": "Quality semiconductor pullback, but cyclical earnings risk remains",
+      "strategy": "STAGED ACCUMULATION",
+      "timeframe": "6-12 months",
+      "setup_quality": "Cyclical quality",
+      "analysis": "Inari is a better-quality tech name for investors who want semiconductor exposure without chasing the smaller AI infrastructure trades. The setup needs patience because global tech rotation can still dominate local fundamentals.",
+      "levels": {
+        "support": "RM1.85-RM1.92",
+        "trigger": "Base and reclaim RM2.05",
+        "risk_line": "Below RM1.78 signals failed support"
+      },
+      "metrics": {
+        "liquidity": "High",
+        "earnings_visibility": "Medium",
+        "balance_sheet": "Generally resilient tech balance sheet",
+        "valuation_view": "Attractive only if RF and OSAT recovery become visible"
+      },
+      "deep_dive": {
+        "thesis": "Inari is a recovery-and-quality trade. The cleaner setup is to accumulate into weakness after confirmation that smartphone RF demand and outsourced semiconductor activity are stabilising.",
+        "catalysts": ["Global smartphone replacement cycle", "RF content recovery", "Cleaner capital allocation after non-core exits"],
+        "risks": ["US tech multiple compression", "Slower semiconductor recovery", "Customer concentration risk"],
+        "what_to_watch": ["Quarterly utilisation", "Dividend policy", "Management demand guidance"]
+      }
+    },
+    {
+      "ticker": "5309.KL",
+      "name": "ITMAX",
+      "sector": "Technology",
+      "price": 3.56,
+      "change_pct": 0.0,
+      "vol_spike": 1.0,
+      "confidence": 8,
+      "confidence_basis": "Recurring smart-city earnings profile",
+      "strategy": "WATCH FOR ENTRY",
+      "timeframe": "6-18 months",
+      "setup_quality": "Growth compounder",
+      "analysis": "ITMAX is less exposed to semiconductor cyclicality and more tied to recurring smart-city infrastructure, surveillance and analytics contracts. It belongs on the watchlist for pullbacks.",
+      "levels": {
+        "support": "RM3.30-RM3.45",
+        "trigger": "Fresh high with volume expansion",
+        "risk_line": "Loss of RM3.20 would reset the setup"
+      },
+      "metrics": {
+        "liquidity": "Medium-high",
+        "earnings_visibility": "High",
+        "balance_sheet": "Growth company; monitor receivables",
+        "valuation_view": "Premium justified only by contract wins and recurring revenue"
+      },
+      "deep_dive": {
+        "thesis": "ITMAX adds a defensive-growth technology sleeve. Smart-city contracts can create more durable revenue than one-off hardware sales, but valuation discipline matters.",
+        "catalysts": ["Municipal contract expansion", "Analytics and command-centre upgrades", "Recurring maintenance revenue"],
+        "risks": ["Valuation compression", "Contract concentration", "Delayed government procurement"],
+        "what_to_watch": ["New concession wins", "Recurring revenue mix", "Receivable days"]
+      }
+    },
+    {
+      "ticker": "0215.KL",
+      "name": "SLVEST",
+      "sector": "Utilities",
+      "price": 1.51,
+      "change_pct": 0.0,
+      "vol_spike": 1.0,
+      "confidence": 7,
+      "confidence_basis": "Renewable energy capex cycle",
+      "strategy": "ACCUMULATE ON PULLBACK",
+      "timeframe": "6-18 months",
+      "setup_quality": "Energy transition growth",
+      "analysis": "Solarvest provides renewable-energy exposure that complements the grid and data-centre theme. It is more sensitive to project timing and margin execution than TNB.",
+      "levels": {
+        "support": "RM1.40-RM1.48",
+        "trigger": "Break above RM1.60",
+        "risk_line": "Below RM1.34 weakens the growth setup"
+      },
+      "metrics": {
+        "liquidity": "Medium",
+        "earnings_visibility": "Medium",
+        "balance_sheet": "Project-driven; monitor leverage and cash cycle",
+        "valuation_view": "Depends on sustained EPCC and recurring asset ownership mix"
+      },
+      "deep_dive": {
+        "thesis": "Solarvest is a medium-beta way to participate in Malaysia's energy transition. Stronger upside comes if it shifts more earnings toward recurring asset ownership rather than pure project delivery.",
+        "catalysts": ["Large-scale solar awards", "Corporate green-energy demand", "Battery and recurring asset expansion"],
+        "risks": ["EPCC margin pressure", "Project delays", "Policy or quota changes"],
+        "what_to_watch": ["Order book conversion", "Recurring revenue contribution", "Project gross margin"]
+      }
+    },
+    {
+      "ticker": "5225.KL",
+      "name": "IHH",
+      "sector": "Healthcare",
+      "price": 6.35,
+      "change_pct": 0.0,
+      "vol_spike": 1.0,
+      "confidence": 7,
+      "confidence_basis": "Defensive healthcare ballast",
+      "strategy": "DEFENSIVE HOLD",
+      "timeframe": "6-18 months",
+      "setup_quality": "Portfolio stabiliser",
+      "analysis": "IHH is not the highest-upside idea, but it improves portfolio balance if the AI and construction trades become crowded. Healthcare earnings are less tied to local market risk appetite.",
+      "levels": {
+        "support": "RM6.05-RM6.20",
+        "trigger": "Close above RM6.55",
+        "risk_line": "Below RM5.95 reduces defensive momentum"
+      },
+      "metrics": {
+        "liquidity": "High",
+        "earnings_visibility": "High",
+        "balance_sheet": "Defensive regional healthcare platform",
+        "valuation_view": "Quality premium; less tactical upside than infrastructure names"
+      },
+      "deep_dive": {
+        "thesis": "IHH is a defensive anchor for a Shariah portfolio. It offers regional healthcare exposure and lowers dependence on local policy or construction cycles.",
+        "catalysts": ["Hospital occupancy improvement", "Regional pricing power", "Balance-sheet optimisation"],
+        "risks": ["Cost inflation", "Regulatory healthcare pricing", "FX translation risk"],
+        "what_to_watch": ["Revenue per inpatient", "EBITDA margin", "India and Turkey contribution"]
       }
     }
   ]

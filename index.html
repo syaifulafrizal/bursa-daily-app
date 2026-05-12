@@ -7,306 +7,547 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
-        .blueprint-card { 
-            background: #ffffff; 
-            border: 1px solid #e2e8f0; 
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
+        :root {
+            --ink: #111827;
+            --muted: #6b7280;
+            --line: #d8dee8;
+            --panel: #ffffff;
+            --panel-soft: #f5f7fb;
+            --blue: #1d4ed8;
+            --green: #047857;
+            --red: #be123c;
+            --amber: #b45309;
         }
-        .blueprint-card:hover { 
-            border-color: #6366f1;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
-            transform: translateY(-4px);
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #eef2f7;
+            color: var(--ink);
+            letter-spacing: 0;
         }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .filter-btn { border: 1px solid #e2e8f0; transition: all 0.2s; background: white; }
-        .filter-btn.active { background: #0f172a; color: white; border-color: #0f172a; }
-        .conviction-indicator { border-top: 3px solid #6366f1 !important; }
-        .modal { 
-            display: none; position: fixed; z-index: 100; left: 0; top: 0; 
-            width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.6); 
-            backdrop-filter: blur(10px);
+        .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+        .shell {
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.88);
+            box-shadow: 0 18px 42px rgba(30, 41, 59, 0.08);
+        }
+        .panel {
+            border: 1px solid var(--line);
+            background: var(--panel);
+            border-radius: 8px;
+        }
+        .metric {
+            border: 1px solid #e3e8ef;
+            background: #fbfcfe;
+            border-radius: 8px;
+        }
+        .btn {
+            border: 1px solid var(--line);
+            background: #fff;
+            color: #374151;
+            border-radius: 6px;
+            transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+        }
+        .btn:hover { border-color: #8aa4cf; color: #111827; }
+        .btn.active { background: #111827; color: #fff; border-color: #111827; }
+        .asset-row {
+            border: 1px solid #dde4ee;
+            background: #fff;
+            border-radius: 8px;
+            transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+        }
+        .asset-row:hover {
+            border-color: #9bb3d8;
+            box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+            transform: translateY(-1px);
+        }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            border-radius: 999px;
+            border: 1px solid #dbe3ee;
+            padding: 0.25rem 0.55rem;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 80;
+            background: rgba(15, 23, 42, 0.58);
+            backdrop-filter: blur(8px);
+            padding: 1rem;
         }
         .modal-content {
-            background-color: #fff; margin: 3% auto; 
-            width: 95%; max-width: 900px; border-radius: 2rem; 
-            overflow: hidden; animation: modalIn 0.3s ease-out;
+            max-width: 1120px;
+            max-height: 92vh;
+            overflow: hidden;
+            margin: 2vh auto;
+            border-radius: 10px;
+            background: #fff;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.25);
         }
-        @keyframes modalIn { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        .analytic-tag { @apply px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-tight border; }
+        .bar-bg { background: #e8edf4; }
+        .bar-fill { background: linear-gradient(90deg, #047857, #1d4ed8); }
+        .fine-grid {
+            background-image: linear-gradient(#e4e9f1 1px, transparent 1px), linear-gradient(90deg, #e4e9f1 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        @media (max-width: 640px) {
+            .modal { padding: 0; }
+            .modal-content { margin: 0; min-height: 100vh; border-radius: 0; }
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
-    <!-- Compact Top Nav -->
-    <nav class="border-b border-slate-100 bg-white/70 backdrop-blur-xl sticky top-0 z-50 h-16">
-        <div class="max-w-[1600px] mx-auto px-6 h-full flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <div class="w-9 h-9 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg shadow-slate-200">
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-slate-300 bg-white/90 backdrop-blur">
+        <div class="mx-auto flex max-w-[1500px] items-center justify-between px-4 py-3 lg:px-6">
+            <div class="flex items-center gap-3">
+                <div class="flex h-9 w-9 items-center justify-center rounded-md bg-slate-950 text-white">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m8 15 3-4 3 2 5-7"/></svg>
                 </div>
                 <div>
-                    <span class="text-lg font-extrabold tracking-tighter uppercase text-slate-900 leading-none block">Bursa<span class="text-indigo-600">Blueprint</span></span>
-                    <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Shariah Intel Node 6.5</span>
+                    <div class="text-sm font-extrabold uppercase tracking-normal text-slate-950">Bursa Blueprint</div>
+                    <div class="text-[10px] font-bold uppercase text-slate-500">Shariah market intelligence</div>
                 </div>
             </div>
-            <div class="flex items-center space-x-6">
-                <button onclick="toggleLogs()" class="text-[10px] font-black text-slate-400 hover:text-slate-900 transition-colors uppercase tracking-[0.2em]">Health_Logs</button>
-                <div class="bg-slate-100 px-4 py-1.5 rounded-full border border-slate-200 text-[10px] font-bold text-slate-600 mono" id="report-date-text">--/--/--</div>
+            <div class="flex items-center gap-2 sm:gap-4">
+                <button id="logs-button" class="btn px-3 py-2 text-[11px] font-extrabold uppercase">Logs</button>
+                <div id="report-date-text" class="mono rounded-md border border-slate-300 bg-slate-100 px-3 py-2 text-[11px] font-bold text-slate-700">----</div>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main class="max-w-[1600px] mx-auto px-6 py-12 flex-1 w-full">
-        <!-- Dashboard Header -->
-        <div class="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            <div class="lg:col-span-9 bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-2 h-full bg-indigo-600"></div>
-                <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-4">Tactical Intelligence Brief</h4>
-                <p id="market-overview" class="text-2xl text-slate-800 font-bold leading-tight">Analyzing Bursa Malaysia flow matrices...</p>
-                <div class="mt-8 flex items-center space-x-6">
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Engine Mode</span>
-                        <span id="analysis-source" class="text-[10px] font-black text-indigo-600 uppercase bg-indigo-50 px-3 py-1 rounded-lg border border-indigo-100 italic">--</span>
+    <main class="fine-grid">
+        <div class="mx-auto max-w-[1500px] px-4 py-6 lg:px-6 lg:py-8">
+            <section class="shell overflow-hidden rounded-lg">
+                <div class="grid gap-px bg-slate-300 lg:grid-cols-[1.7fr_0.85fr]">
+                    <div class="bg-white p-5 sm:p-7">
+                        <div class="mb-5 flex flex-wrap items-center gap-2">
+                            <span id="session-label" class="pill bg-blue-50 text-blue-800">Session</span>
+                            <span id="analysis-source" class="pill bg-emerald-50 text-emerald-800">Source</span>
+                            <span class="pill bg-slate-100 text-slate-700">Non-advisory research</span>
+                        </div>
+                        <h1 class="max-w-5xl text-2xl font-extrabold leading-tight text-slate-950 sm:text-4xl">Tactical Shariah Equity Brief</h1>
+                        <p id="market-overview" class="mt-4 max-w-5xl text-sm font-medium leading-7 text-slate-600 sm:text-base">Loading market overview...</p>
                     </div>
-                    <div class="h-4 w-px bg-slate-200"></div>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest text-emerald-600">Live Scanners</span>
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <aside class="bg-slate-950 p-5 text-white sm:p-7">
+                        <div class="text-[10px] font-extrabold uppercase text-slate-400">Portfolio Stance</div>
+                        <p id="stance-summary" class="mt-3 text-sm font-semibold leading-6 text-slate-200">Loading allocation view...</p>
+                        <div id="allocation-bars" class="mt-6 space-y-4"></div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="mt-5 grid gap-5 xl:grid-cols-[0.9fr_1.5fr_0.9fr]">
+                <div class="panel p-5">
+                    <div class="text-[10px] font-extrabold uppercase text-slate-500">Risk Tone</div>
+                    <div id="risk-tone" class="mt-2 text-xl font-extrabold text-slate-950">--</div>
+                    <p id="base-case" class="mt-4 text-sm font-medium leading-6 text-slate-600">--</p>
+                </div>
+                <div class="panel p-5">
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                            <div class="text-[10px] font-extrabold uppercase text-slate-500">Market Breadth</div>
+                            <div id="leadership-line" class="mt-2 text-lg font-extrabold text-slate-950">--</div>
+                        </div>
+                        <div id="picks-count" class="mono text-xs font-bold text-slate-500">0 setups</div>
+                    </div>
+                    <div id="watch-zones" class="mt-5 flex flex-wrap gap-2"></div>
+                </div>
+                <div class="panel p-5">
+                    <div class="text-[10px] font-extrabold uppercase text-slate-500">Scenario Balance</div>
+                    <div class="mt-3 grid gap-3 text-sm font-medium leading-6 text-slate-600">
+                        <p id="bull-case">--</p>
+                        <p id="bear-case">--</p>
                     </div>
                 </div>
-            </div>
-            <div class="lg:col-span-3 bg-slate-900 p-8 rounded-[2.5rem] text-white relative overflow-hidden flex flex-col justify-center">
-                 <h4 class="text-[10px] font-black opacity-40 uppercase tracking-[0.4em] mb-2">Shariah_Filter</h4>
-                 <p class="text-xl font-bold leading-tight">100% Verified Compliance</p>
-                 <div class="mt-6 flex space-x-1.5">
-                     <div class="h-1 flex-1 bg-emerald-500 rounded-full"></div>
-                     <div class="h-1 flex-1 bg-emerald-500 rounded-full"></div>
-                     <div class="h-1 flex-1 bg-emerald-800 rounded-full"></div>
-                 </div>
-                 <svg class="absolute -right-4 -bottom-4 w-24 h-24 text-white/5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
-            </div>
-        </div>
+            </section>
 
-        <!-- Toolbar -->
-        <div class="mb-8 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-100 pb-8">
-            <div class="flex flex-wrap gap-2" id="filter-group">
-                <button class="filter-btn active px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="All">All Assets</button>
-                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Technology">Tech</button>
-                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Construction">Infrastructure</button>
-                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Energy">Energy</button>
-                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Utilities">Utilities</button>
-                <button class="filter-btn px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-sm" data-filter="Consumer">Consumer</button>
-            </div>
-            <div class="flex items-center space-x-6">
-                <span id="picks-count" class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">0 Assets Mapped</span>
-                <select id="sort-select" class="bg-white border border-slate-200 rounded-2xl px-5 py-2 text-[10px] font-black uppercase tracking-widest outline-none shadow-sm hover:border-indigo-400 transition-colors">
-                    <option value="confidence">Sort: Confidence</option>
-                    <option value="change">Sort: Momentum</option>
-                    <option value="price-asc">Sort: Value Low</option>
-                    <option value="price-desc">Sort: Value High</option>
-                </select>
-            </div>
-        </div>
+            <section class="mt-5 panel p-4 sm:p-5">
+                <div class="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+                    <div id="filter-group" class="flex flex-wrap gap-2"></div>
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+                        <label class="relative block">
+                            <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+                            <input id="search-input" type="search" placeholder="Search ticker, name, thesis" class="h-10 w-full rounded-md border border-slate-300 bg-white pl-9 pr-3 text-sm font-semibold outline-none focus:border-blue-500 sm:w-72">
+                        </label>
+                        <select id="sort-select" class="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm font-extrabold outline-none focus:border-blue-500">
+                            <option value="confidence">Sort by confidence</option>
+                            <option value="quality">Sort by quality</option>
+                            <option value="change">Sort by momentum</option>
+                            <option value="price-asc">Price low to high</option>
+                            <option value="price-desc">Price high to low</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Grid (4 Columns) -->
-        <div id="asset-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-24"></div>
+            <section class="mt-5">
+                <div id="asset-grid" class="grid gap-4"></div>
+            </section>
+        </div>
     </main>
 
-    <footer class="bg-white border-t border-slate-100 py-20 text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <span class="text-xl font-black uppercase tracking-tighter">Bursa<span class="text-indigo-600">Blueprint</span></span>
-            <p class="text-slate-400 text-sm mt-3 font-medium">Precision Intelligence for the Shariah Alpha Seeker.</p>
-            <div class="mt-12 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-6">
-                <span class="text-[9px] font-black text-slate-300 uppercase tracking-widest">© 2026 Blueprint Architecture v6.5</span>
-                <div class="flex space-x-6 text-[9px] font-black text-slate-400 uppercase tracking-widest">
-                    <span>Non-Advisory Content</span>
-                    <span>AI Synthesized Data</span>
-                    <span>100% Free Node</span>
-                </div>
-            </div>
+    <footer class="border-t border-slate-300 bg-white">
+        <div class="mx-auto flex max-w-[1500px] flex-col gap-3 px-4 py-6 text-xs font-semibold text-slate-500 lg:flex-row lg:items-center lg:justify-between lg:px-6">
+            <span>Bursa Blueprint v7.0</span>
+            <span>Research dashboard only. Not financial advice. Verify all prices and announcements before acting.</span>
         </div>
     </footer>
 
-    <!-- Detail Modal -->
     <div id="detail-modal" class="modal">
-        <div class="modal-content shadow-2xl rounded-[3rem]">
-            <div class="p-10 bg-slate-50 border-b border-slate-100 flex justify-between items-center">
+        <div class="modal-content">
+            <div class="flex items-start justify-between gap-4 border-b border-slate-200 bg-slate-50 p-5 sm:p-7">
                 <div>
-                    <div class="flex items-center space-x-3 mb-3">
-                        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[8px] font-black rounded uppercase">Verified Compliance</span>
-                        <span id="modal-sector" class="px-2 py-0.5 bg-indigo-100 text-indigo-700 text-[8px] font-black rounded uppercase">Sector</span>
+                    <div class="mb-3 flex flex-wrap gap-2">
+                        <span id="modal-sector" class="pill bg-blue-50 text-blue-800">Sector</span>
+                        <span id="modal-strategy" class="pill bg-emerald-50 text-emerald-800">Strategy</span>
+                        <span id="modal-timeframe" class="pill bg-slate-100 text-slate-700">Timeframe</span>
                     </div>
-                    <h2 id="modal-name" class="text-4xl font-black tracking-tighter text-slate-900 leading-none">--</h2>
-                    <p id="modal-ticker" class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mt-3">--</p>
+                    <h2 id="modal-name" class="text-3xl font-extrabold text-slate-950 sm:text-4xl">--</h2>
+                    <p id="modal-ticker" class="mono mt-2 text-xs font-bold uppercase text-slate-500">--</p>
                 </div>
-                <button onclick="closeModal()" class="p-4 bg-white border border-slate-200 hover:border-indigo-400 rounded-3xl transition-all text-slate-500 shadow-sm">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <button id="close-detail" class="btn flex h-10 w-10 items-center justify-center">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 </button>
             </div>
-            <div class="p-12 space-y-12 max-h-[65vh] overflow-y-auto">
-                <section>
-                    <h4 class="text-[10px] font-black text-indigo-600 uppercase tracking-[0.3em] mb-4">Investment Blueprint</h4>
-                    <p id="modal-thesis" class="text-3xl text-slate-800 font-bold leading-snug tracking-tight">--</p>
+            <div class="max-h-[72vh] overflow-y-auto p-5 sm:p-7">
+                <div class="grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
+                    <section>
+                        <div class="text-[10px] font-extrabold uppercase text-blue-700">Investment Thesis</div>
+                        <p id="modal-thesis" class="mt-3 text-xl font-extrabold leading-8 text-slate-950">--</p>
+                        <p id="modal-analysis" class="mt-4 text-sm font-medium leading-7 text-slate-600">--</p>
+                    </section>
+                    <section class="panel p-4">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="metric p-3">
+                                <div class="text-[10px] font-extrabold uppercase text-slate-500">Confidence</div>
+                                <div id="modal-confidence" class="mt-1 text-2xl font-extrabold text-slate-950">--</div>
+                            </div>
+                            <div class="metric p-3">
+                                <div class="text-[10px] font-extrabold uppercase text-slate-500">Price</div>
+                                <div id="modal-price" class="mt-1 text-2xl font-extrabold text-slate-950">--</div>
+                            </div>
+                        </div>
+                        <div id="modal-levels" class="mt-4 space-y-3"></div>
+                    </section>
+                </div>
+                <div class="mt-6 grid gap-5 lg:grid-cols-3">
+                    <section class="panel p-4">
+                        <div class="text-[10px] font-extrabold uppercase text-emerald-700">Catalysts</div>
+                        <ul id="modal-catalysts" class="mt-4 space-y-3 text-sm font-semibold leading-6 text-slate-700"></ul>
+                    </section>
+                    <section class="panel p-4">
+                        <div class="text-[10px] font-extrabold uppercase text-rose-700">Risks</div>
+                        <ul id="modal-risks" class="mt-4 space-y-3 text-sm font-semibold leading-6 text-slate-700"></ul>
+                    </section>
+                    <section class="panel p-4">
+                        <div class="text-[10px] font-extrabold uppercase text-amber-700">What To Watch</div>
+                        <ul id="modal-watch" class="mt-4 space-y-3 text-sm font-semibold leading-6 text-slate-700"></ul>
+                    </section>
+                </div>
+                <section class="mt-6 panel p-4">
+                    <div class="text-[10px] font-extrabold uppercase text-slate-500">Quality Metrics</div>
+                    <div id="modal-metrics" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></div>
                 </section>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div>
-                        <h4 class="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] mb-6">Core Catalysts</h4>
-                        <ul id="modal-catalysts" class="space-y-4 text-slate-500 font-bold text-base"></ul>
-                    </div>
-                    <div>
-                        <h4 class="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] mb-6">Structural Risks</h4>
-                        <ul id="modal-risks" class="space-y-4 text-slate-500 font-bold text-base"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-indigo-600 p-8 flex justify-between items-center text-white">
-                <div>
-                    <span class="text-[10px] font-bold opacity-70 uppercase tracking-widest block mb-1">Architecture Directive</span>
-                    <span id="modal-strategy" class="text-xl font-black uppercase tracking-wide tracking-tight">--</span>
-                </div>
-                <div class="text-right">
-                    <span class="text-[10px] font-bold opacity-70 uppercase tracking-widest block mb-1">Confidence Score</span>
-                    <span id="modal-confidence" class="text-3xl font-black tracking-tighter">--/10</span>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Logs Modal -->
     <div id="logs-modal" class="modal">
-        <div class="modal-content max-w-2xl bg-slate-900 border border-slate-800 rounded-[2rem] overflow-hidden">
-            <div class="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900">
-                <h3 class="text-white font-black uppercase tracking-widest text-[10px]">Architecture_Logs</h3>
-                <button onclick="toggleLogs()" class="text-slate-500 hover:text-white transition-colors">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <div class="modal-content max-w-3xl bg-slate-950 text-white">
+            <div class="flex items-center justify-between border-b border-slate-800 p-5">
+                <h3 class="text-xs font-extrabold uppercase text-slate-300">System Logs</h3>
+                <button id="close-logs" class="flex h-9 w-9 items-center justify-center rounded-md border border-slate-700 text-slate-300 hover:border-slate-400">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 </button>
             </div>
-            <div class="p-10 h-[400px] overflow-y-auto font-mono text-[10px] space-y-2 bg-black/40" id="logs-container"></div>
+            <div id="logs-container" class="mono max-h-[70vh] overflow-y-auto p-5 text-xs leading-6"></div>
         </div>
     </div>
 
     <script>
         let allPicks = [];
-        let currentFilter = 'All';
+        let currentFilter = "All";
+        let report = {};
+
+        const sectorOrder = ["All", "Utilities", "Construction", "Technology", "Healthcare", "Energy", "Consumer", "Property", "Industrial"];
+        const qualityRank = {
+            "Institutional core": 5,
+            "Liquid infrastructure leader": 5,
+            "Growth compounder": 4,
+            "Cyclical quality": 4,
+            "Energy transition growth": 3,
+            "Portfolio stabiliser": 3,
+            "High-beta thematic": 3,
+            "Speculative contractor proxy": 2
+        };
 
         async function init() {
             try {
-                const [reportRes, logsRes] = await Promise.all([ fetch('data/daily_report.json'), fetch('data/logs.json') ]);
-                const data = await reportRes.json();
+                const [reportRes, logsRes] = await Promise.all([
+                    fetch("data/daily_report.json", { cache: "no-store" }),
+                    fetch("data/logs.json", { cache: "no-store" })
+                ]);
+                report = await reportRes.json();
                 const logs = await logsRes.json();
-                allPicks = data.top_picks;
-                document.getElementById('report-date-text').textContent = data.date;
-                document.getElementById('market-overview').textContent = data.market_overview;
-                document.getElementById('analysis-source').textContent = data.source;
+                allPicks = Array.isArray(report.top_picks) ? report.top_picks : [];
+                hydrateBrief(report);
+                renderFilters();
                 renderPicks();
-                setupListeners();
                 renderLogs(logs);
-            } catch (err) { console.error(err); }
+                setupListeners();
+            } catch (error) {
+                document.getElementById("asset-grid").innerHTML = emptyState("Unable to load report data.");
+                console.error(error);
+            }
+        }
+
+        function hydrateBrief(data) {
+            document.getElementById("report-date-text").textContent = data.date || "No date";
+            document.getElementById("session-label").textContent = data.session || "Daily brief";
+            document.getElementById("analysis-source").textContent = data.source || "Manual synthesis";
+            document.getElementById("market-overview").textContent = data.market_overview || "No market overview available.";
+
+            const breadth = data.breadth || {};
+            document.getElementById("risk-tone").textContent = breadth.risk_tone || "Selective";
+            document.getElementById("base-case").textContent = breadth.base_case || "Focus on setups where technical confirmation aligns with a real catalyst.";
+            document.getElementById("bull-case").textContent = `Bull: ${breadth.bull_case || "Follow-through requires stronger breadth and contract conversion."}`;
+            document.getElementById("bear-case").textContent = `Bear: ${breadth.bear_case || "Failed breadth would increase drawdown risk in small caps."}`;
+            document.getElementById("leadership-line").textContent = (breadth.leadership || ["Leadership pending"]).join(" / ");
+            document.getElementById("watch-zones").innerHTML = (breadth.watch_zones || []).map(item => `<span class="pill bg-amber-50 text-amber-800">${escapeHtml(item)}</span>`).join("");
+
+            const stance = data.portfolio_stance || {};
+            document.getElementById("stance-summary").textContent = stance.summary || "Use staged entries and keep position sizing tied to liquidity.";
+            const bars = [
+                ["Core", stance.core],
+                ["Tactical", stance.tactical],
+                ["Cash", stance.cash],
+                ["Watchlist", stance.watchlist]
+            ];
+            document.getElementById("allocation-bars").innerHTML = bars.map(([label, value]) => {
+                const pct = Number.isFinite(value) ? value : 0;
+                return `<div>
+                    <div class="mb-1 flex justify-between text-[11px] font-bold uppercase text-slate-300"><span>${label}</span><span>${pct}%</span></div>
+                    <div class="bar-bg h-2 overflow-hidden rounded-full"><div class="bar-fill h-full rounded-full" style="width:${Math.max(0, Math.min(100, pct))}%"></div></div>
+                </div>`;
+            }).join("");
+        }
+
+        function renderFilters() {
+            const sectors = [...new Set(allPicks.map(pick => pick.sector).filter(Boolean))];
+            const ordered = sectorOrder.filter(sector => sector === "All" || sectors.includes(sector));
+            const extras = sectors.filter(sector => !ordered.includes(sector));
+            document.getElementById("filter-group").innerHTML = [...ordered, ...extras].map(sector => {
+                const active = sector === currentFilter ? "active" : "";
+                return `<button class="btn ${active} px-3 py-2 text-[11px] font-extrabold uppercase" data-filter="${escapeHtml(sector)}">${escapeHtml(sector)}</button>`;
+            }).join("");
         }
 
         function renderPicks() {
-            const grid = document.getElementById('asset-grid');
-            const sortVal = document.getElementById('sort-select').value;
-            let filtered = currentFilter === 'All' ? allPicks : allPicks.filter(p => p.sector === currentFilter);
-            const maxConfidence = filtered.length ? Math.max(...filtered.map(p => p.confidence)) : 0;
-            
-            if(sortVal === 'confidence') filtered.sort((a,b) => b.confidence - a.confidence);
-            else if(sortVal === 'change') filtered.sort((a,b) => Math.abs(b.change_pct || 0) - Math.abs(a.change_pct || 0));
-            else if(sortVal === 'price-asc') filtered.sort((a,b) => a.price - b.price);
-            else filtered.sort((a,b) => b.price - a.price);
+            const grid = document.getElementById("asset-grid");
+            const query = document.getElementById("search-input")?.value?.trim().toLowerCase() || "";
+            const sortVal = document.getElementById("sort-select")?.value || "confidence";
+            let picks = currentFilter === "All" ? [...allPicks] : allPicks.filter(pick => pick.sector === currentFilter);
 
-            document.getElementById('picks-count').textContent = `${filtered.length} Assets Mapped`;
-            grid.innerHTML = filtered.length ? '' : '<div class="col-span-full py-40 text-center bg-white rounded-[2rem] border border-slate-100"><p class="text-slate-400 font-black uppercase tracking-[0.4em] text-xs italic">Sector matrix is empty for this cycle</p></div>';
+            if (query) {
+                picks = picks.filter(pick => [
+                    pick.ticker, pick.name, pick.sector, pick.strategy, pick.analysis,
+                    pick.deep_dive?.thesis, pick.confidence_basis
+                ].filter(Boolean).join(" ").toLowerCase().includes(query));
+            }
 
-            filtered.forEach(pick => {
-                const change = pick.change_pct || 0;
-                const isPositive = change >= 0;
-                const vol = pick.vol_spike || 1.0;
-                const isTopConviction = pick.confidence === maxConfidence && maxConfidence >= 8;
-                
-                const card = document.createElement('div');
-                card.className = `blueprint-card rounded-[2.5rem] p-8 flex flex-col shadow-sm ${isTopConviction ? 'conviction-indicator shadow-xl shadow-indigo-100' : ''}`;
-                card.onclick = () => openModal(pick);
-                
-                card.innerHTML = `
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="flex-1">
-                            <h3 class="text-2xl font-black tracking-tighter leading-none mb-2 truncate w-44" title="${pick.name}">${pick.name}</h3>
-                            <div class="flex items-center space-x-2">
-                                <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest mono">${pick.ticker}</span>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[8px] font-black rounded-lg uppercase border border-slate-200">${pick.sector}</span>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-2xl font-black tracking-tighter text-slate-900 block">RM ${pick.price.toFixed(3)}</span>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="analytic-tag ${isPositive ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-rose-50 text-rose-600 border-rose-100'}">
-                            ${isPositive ? '▲' : '▼'} ${Math.abs(change)}%
-                        </span>
-                        <span class="analytic-tag bg-slate-50 text-slate-500 border-slate-200">Vol: ${vol}x</span>
-                        <span class="analytic-tag bg-indigo-50 text-indigo-600 border-indigo-100">Conf: ${pick.confidence}</span>
-                    </div>
-
-                    <div class="flex-1 mb-8">
-                         <p class="text-[13px] text-slate-500 font-bold leading-relaxed line-clamp-3 italic">"${pick.analysis}"</p>
-                    </div>
-
-                    <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Protocol</span>
-                            <span class="text-[11px] font-black text-indigo-600 uppercase tracking-tight">${pick.strategy}</span>
-                        </div>
-                        ${isTopConviction ? '<div class="w-6 h-6 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-100"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></div>' : ''}
-                    </div>
-                `;
-                grid.appendChild(card);
+            picks.sort((a, b) => {
+                if (sortVal === "confidence") return (b.confidence || 0) - (a.confidence || 0);
+                if (sortVal === "quality") return (qualityRank[b.setup_quality] || 0) - (qualityRank[a.setup_quality] || 0);
+                if (sortVal === "change") return Math.abs(b.change_pct || 0) - Math.abs(a.change_pct || 0);
+                if (sortVal === "price-asc") return (a.price || 0) - (b.price || 0);
+                return (b.price || 0) - (a.price || 0);
             });
+
+            document.getElementById("picks-count").textContent = `${picks.length} setups`;
+            grid.innerHTML = picks.length ? picks.map(assetCard).join("") : emptyState("No setups match the current filter.");
+            document.querySelectorAll("[data-open]").forEach(button => {
+                button.addEventListener("click", () => openModal(allPicks[Number(button.dataset.open)]));
+            });
+        }
+
+        function assetCard(pick) {
+            const index = allPicks.indexOf(pick);
+            const change = pick.change_pct || 0;
+            const positive = change >= 0;
+            const thesis = pick.deep_dive?.thesis || pick.analysis || "No thesis available.";
+            const levels = pick.levels || {};
+            const metrics = pick.metrics || {};
+            return `<article class="asset-row p-4 sm:p-5">
+                <div class="grid gap-4 lg:grid-cols-[1.1fr_1.35fr_0.85fr_0.35fr] lg:items-center">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="mono text-xs font-extrabold text-slate-500">${escapeHtml(pick.ticker || "--")}</span>
+                            <span class="pill bg-slate-100 text-slate-700">${escapeHtml(pick.sector || "Unknown")}</span>
+                            <span class="pill ${positive ? "bg-emerald-50 text-emerald-800" : "bg-rose-50 text-rose-800"}">${positive ? "+" : ""}${formatNumber(change)}%</span>
+                        </div>
+                        <h3 class="mt-3 text-2xl font-extrabold leading-tight text-slate-950">${escapeHtml(pick.name || "--")}</h3>
+                        <div class="mt-2 text-sm font-bold text-slate-600">RM ${formatPrice(pick.price)} <span class="text-slate-400">/ ${escapeHtml(pick.timeframe || "Tactical")}</span></div>
+                    </div>
+                    <div>
+                        <div class="mb-2 flex flex-wrap gap-2">
+                            <span class="pill bg-blue-50 text-blue-800">${escapeHtml(pick.strategy || "Watchlist")}</span>
+                            <span class="pill bg-emerald-50 text-emerald-800">${escapeHtml(pick.setup_quality || pick.confidence_basis || "Setup")}</span>
+                        </div>
+                        <p class="line-clamp-2 text-sm font-semibold leading-6 text-slate-700">${escapeHtml(thesis)}</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
+                        ${miniMetric("Confidence", `${pick.confidence || "--"}/10`)}
+                        ${miniMetric("Volume", `${formatNumber(pick.vol_spike || 1)}x`)}
+                        ${miniMetric("Support", levels.support || "--")}
+                        ${miniMetric("Visibility", metrics.earnings_visibility || "--")}
+                    </div>
+                    <div class="lg:text-right">
+                        <button data-open="${index}" class="btn w-full px-4 py-3 text-xs font-extrabold uppercase lg:w-auto">Research</button>
+                    </div>
+                </div>
+            </article>`;
+        }
+
+        function miniMetric(label, value) {
+            return `<div class="metric min-h-[64px] p-3">
+                <div class="text-[10px] font-extrabold uppercase text-slate-500">${escapeHtml(label)}</div>
+                <div class="mt-1 text-sm font-extrabold leading-5 text-slate-950">${escapeHtml(String(value))}</div>
+            </div>`;
         }
 
         function openModal(pick) {
-            document.getElementById('modal-name').textContent = pick.name;
-            document.getElementById('modal-ticker').textContent = pick.ticker;
-            document.getElementById('modal-sector').textContent = pick.sector;
-            document.getElementById('modal-thesis').textContent = pick.deep_dive.thesis;
-            document.getElementById('modal-strategy').textContent = pick.strategy;
-            document.getElementById('modal-confidence').textContent = `${pick.confidence}/10`;
-            document.getElementById('modal-catalysts').innerHTML = (pick.deep_dive.catalysts || []).map(c => `<li>• ${c}</li>`).join('');
-            document.getElementById('modal-risks').innerHTML = (pick.deep_dive.risks || []).map(r => `<li>• ${r}</li>`).join('');
-            document.getElementById('detail-modal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            if (!pick) return;
+            const deep = pick.deep_dive || {};
+            document.getElementById("modal-sector").textContent = pick.sector || "Sector";
+            document.getElementById("modal-strategy").textContent = pick.strategy || "Strategy";
+            document.getElementById("modal-timeframe").textContent = pick.timeframe || "Tactical";
+            document.getElementById("modal-name").textContent = pick.name || "--";
+            document.getElementById("modal-ticker").textContent = pick.ticker || "--";
+            document.getElementById("modal-thesis").textContent = deep.thesis || pick.analysis || "--";
+            document.getElementById("modal-analysis").textContent = pick.analysis || "";
+            document.getElementById("modal-confidence").textContent = `${pick.confidence || "--"}/10`;
+            document.getElementById("modal-price").textContent = `RM ${formatPrice(pick.price)}`;
+            document.getElementById("modal-catalysts").innerHTML = listItems(deep.catalysts);
+            document.getElementById("modal-risks").innerHTML = listItems(deep.risks);
+            document.getElementById("modal-watch").innerHTML = listItems(deep.what_to_watch);
+            document.getElementById("modal-levels").innerHTML = objectRows(pick.levels);
+            document.getElementById("modal-metrics").innerHTML = objectRows(pick.metrics, true);
+            showModal("detail-modal");
         }
 
-        function closeModal() { document.getElementById('detail-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-        function toggleLogs() { const m = document.getElementById('logs-modal'); m.style.display = m.style.display === 'block' ? 'none' : 'block'; }
         function renderLogs(logs) {
-            const container = document.getElementById('logs-container');
-            container.innerHTML = logs.reverse().map(l => `<div class="mb-1"><span class="text-slate-600">[${l.timestamp}]</span> <span class="${l.level === 'ERROR' ? 'text-rose-500' : 'text-indigo-400'} font-bold">${l.level}</span> <span class="text-slate-400">${l.message}</span></div>`).join('');
+            const safeLogs = Array.isArray(logs) ? [...logs].reverse() : [];
+            document.getElementById("logs-container").innerHTML = safeLogs.map(log => {
+                const tone = log.level === "ERROR" ? "text-rose-300" : log.level === "WARN" ? "text-amber-300" : "text-blue-300";
+                return `<div class="border-b border-slate-800 py-2">
+                    <span class="text-slate-500">[${escapeHtml(log.timestamp || "--")}]</span>
+                    <span class="${tone} font-bold">${escapeHtml(log.level || "INFO")}</span>
+                    <span class="text-slate-300">${escapeHtml(log.message || "")}</span>
+                </div>`;
+            }).join("");
         }
 
         function setupListeners() {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.onclick = (e) => {
-                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                    e.target.classList.add('active');
-                    currentFilter = e.target.dataset.filter;
-                    renderPicks();
-                };
+            document.getElementById("filter-group").addEventListener("click", event => {
+                const button = event.target.closest("[data-filter]");
+                if (!button) return;
+                currentFilter = button.dataset.filter;
+                renderFilters();
+                renderPicks();
             });
-            document.getElementById('sort-select').onchange = renderPicks;
-            window.onclick = (event) => { 
-                if (event.target == document.getElementById('detail-modal')) closeModal();
-                if (event.target == document.getElementById('logs-modal')) toggleLogs();
+            document.getElementById("sort-select").addEventListener("change", renderPicks);
+            document.getElementById("search-input").addEventListener("input", renderPicks);
+            document.getElementById("logs-button").addEventListener("click", () => showModal("logs-modal"));
+            document.getElementById("close-detail").addEventListener("click", () => hideModal("detail-modal"));
+            document.getElementById("close-logs").addEventListener("click", () => hideModal("logs-modal"));
+            window.addEventListener("keydown", event => {
+                if (event.key === "Escape") {
+                    hideModal("detail-modal");
+                    hideModal("logs-modal");
+                }
+            });
+            document.querySelectorAll(".modal").forEach(modal => {
+                modal.addEventListener("click", event => {
+                    if (event.target === modal) hideModal(modal.id);
+                });
+            });
+        }
+
+        function listItems(items) {
+            const list = Array.isArray(items) && items.length ? items : ["No item supplied."];
+            return list.map(item => `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"></span><span>${escapeHtml(item)}</span></li>`).join("");
+        }
+
+        function objectRows(obj, asCards = false) {
+            if (!obj || typeof obj !== "object") return `<div class="text-sm font-semibold text-slate-500">No data supplied.</div>`;
+            return Object.entries(obj).map(([key, value]) => {
+                const label = key.replace(/_/g, " ");
+                if (asCards) return miniMetric(label, value);
+                return `<div class="rounded-md border border-slate-200 bg-slate-50 p-3">
+                    <div class="text-[10px] font-extrabold uppercase text-slate-500">${escapeHtml(label)}</div>
+                    <div class="mt-1 text-sm font-extrabold text-slate-950">${escapeHtml(String(value))}</div>
+                </div>`;
+            }).join("");
+        }
+
+        function showModal(id) {
+            document.getElementById(id).style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function hideModal(id) {
+            document.getElementById(id).style.display = "none";
+            if (![...document.querySelectorAll(".modal")].some(modal => modal.style.display === "block")) {
+                document.body.style.overflow = "";
             }
         }
-        window.onload = init;
+
+        function emptyState(message) {
+            return `<div class="panel p-12 text-center text-sm font-extrabold uppercase text-slate-500">${escapeHtml(message)}</div>`;
+        }
+
+        function formatPrice(value) {
+            return Number.isFinite(value) ? Number(value).toFixed(3) : "--";
+        }
+
+        function formatNumber(value) {
+            return Number.isFinite(value) ? Number(value).toFixed(2).replace(/\.00$/, "") : "--";
+        }
+
+        function escapeHtml(value) {
+            return String(value ?? "").replace(/[&<>"']/g, char => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;"
+            }[char]));
+        }
+
+        window.addEventListener("load", init);
     </script>
 </body>
 </html>
